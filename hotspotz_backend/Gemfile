@@ -54,6 +54,7 @@ end
 
 group :test do
   gem 'minitest-matchers_vaccine'
+  gem 'minitest-spec-context'
   gem 'shoulda-matchers'
 end
 
