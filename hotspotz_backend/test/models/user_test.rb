@@ -62,4 +62,29 @@ class UserTest < ActiveSupport::TestCase
     @subject.password_confirmation = 'a' * 21
     assert_not @subject.valid?
   end
+
+  test 'name should contain letters and whitespace' do
+    @subject.name = 'Test1 User1'
+    assert_not @subject.valid?
+  end
+
+  test 'username should be alphanumeric' do
+    @subject.username = 'Testuser1!'
+    assert_not @subject.valid?
+  end
+
+  test 'email should be valid' do
+    @subject.email = 'test.com'
+    assert_not @subject.valid?
+  end
+
+  test 'password should contain at least one capital letter' do
+    @subject.password = @subject.password_confirmation = 'password1'
+    assert_not @subject.valid?
+  end
+
+  test 'password should contain at least one digit' do
+    @subject.password = @subject.password_confirmation = 'Password'
+    assert_not @subject.valid?
+  end
 end
