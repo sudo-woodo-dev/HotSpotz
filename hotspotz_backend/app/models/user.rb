@@ -4,8 +4,8 @@ class User < ApplicationRecord
             presence: true, length: { minimum: 6, maximum: 20 }
   validates :email, :password_confirmation, presence: true
 
-  validates_format_of :name, with: /^[a-z]+$/i
-  validates_format_of :username, with: /^[A-Za-z0-9]+$/
+  validates_format_of :name, with: /\A[a-z]\z/i
+  validates_format_of :username, with: /\A[A-Za-z0-9]\z/
   validates_format_of :email,
                       with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates_format_of :password, with: /[A-Z]+[0-9]*/
