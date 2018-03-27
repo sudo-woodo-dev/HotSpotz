@@ -1,13 +1,15 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  describe '#User model' do
-    context 'when valid user' do
-      @subject = User.new
+  def setup
+    @subject = User.new(name: 'Test User',
+                        username: 'test101',
+                        email: 'test@test.com',
+                        password: 'Foobared1',
+                        password_confirmation: 'Foobared1')
+  end
 
-      it 'has name' do
-        must have_valid(:email).when("a@a.com", "foo@bar.com", "dave@abc.io")
-      end
-    end
+  test 'should be valid' do
+    assert @subject.valid?
   end
 end
