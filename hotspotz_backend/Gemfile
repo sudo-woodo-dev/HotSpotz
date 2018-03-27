@@ -53,6 +53,7 @@ group :development do
 end
 
 group :test do
+  gem 'minitest-matchers_vaccine'
   gem 'shoulda-matchers'
 end
 
