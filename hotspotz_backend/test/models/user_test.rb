@@ -37,4 +37,29 @@ class UserTest < ActiveSupport::TestCase
     @subject.password_confirmation = '     '
     assert_not @subject.valid?
   end
+
+  test 'name should have a maximum length' do
+    @subject.name = 'a' * 26
+    assert_not @subject.valid?
+  end
+
+  test 'username should have a minimum length' do
+    @subject.username = 'a' * 5
+    assert_not @subject.valid?
+  end
+
+  test 'username should have a maximum length' do
+    @subject.username = 'a' * 21
+    assert_not @subject.valid?
+  end
+
+  test 'password should have a minimum length' do
+    @subject.password = 'a' * 5
+    assert_not @subject.valid?
+  end
+
+  test 'password_confirmation should have a maximum length' do
+    @subject.password_confirmation = 'a' * 21
+    assert_not @subject.valid?
+  end
 end
