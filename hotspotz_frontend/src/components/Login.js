@@ -19,12 +19,13 @@ export default class Login extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    this.Auth.login(this.state.username,this.state.password)
-    .then(res => {
-      this.props.history.replace('/profile')
-      alert('You are logged in!');
-    })
-    .catch(err =>{ alert(err) })
+    //TODO Implement when connecting frontend to the backend //
+    // this.Auth.login(this.state.username,this.state.password)
+    // .then(res => {
+    //   this.props.history.replace('/profile')
+    //   alert('You are logged in!');
+    // })
+    // .catch(err =>{ alert(err) })
   }
 
   render() {
