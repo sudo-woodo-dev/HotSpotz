@@ -3,6 +3,12 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
+  def create
+    user = User.new(user_params)
+    return unless user.save
+    render json: user
+  end
+
   private
 
   def user_params
