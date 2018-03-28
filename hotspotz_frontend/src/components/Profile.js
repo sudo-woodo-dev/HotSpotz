@@ -9,6 +9,12 @@ const Profile = () => (
         <Row>
           <img id="avatar" src="http://via.placeholder.com/200x200" alt="Avatar" />
         </Row>
+        <Row id="name">
+          <p>Fake Name</p>
+        </Row>
+        <Row id="username">
+          <p>FakeUsername</p>
+        </Row>
       </Col>
       <Col xs={12} md={8}>
         <code>&lt;{'Col xs={12} md={8}'} /&gt;</code>
