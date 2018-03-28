@@ -11,7 +11,21 @@ export default class Profile extends Component {
         name: 'Fake Name',
         username: 'fakeUsername',
         avatar: 'http://via.placeholder.com/200x200'
-      }
+      },
+      reviews: [
+        {
+          photo: 'http://via.placeholder.com/200x400',
+          text: 'Disgusting, will never return'
+        },
+        {
+          photo: 'http://via.placeholder.com/200x400',
+          text: 'Smells like apple pie'
+        },
+        {
+          photo: 'http://via.placeholder.com/200x400',
+          text: 'Too many birds flying around'
+        }
+      ]
     };
   }
   render() {
@@ -34,6 +48,6 @@ export default class Profile extends Component {
           </Col>
         </Row>
       </Grid>
-    )
+    );
   }
 }
