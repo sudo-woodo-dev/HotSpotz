@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import "../css/Login.css";
+import AuthService from '../services/AuthService';
 
 
 export default class Login extends Component {
   constructor() {
-    super()
-    this.state={
-      username: '',
-      password: ''
-    }
+  super()
+  this.Auth = new AuthService()
+  this.state={
+    username: '',
+    password: ''
   }
+}
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value })
@@ -17,12 +19,13 @@ export default class Login extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    this.Auth.login(this.state.username,this.state.password)
-    .then(res => {
-      this.props.history.replace('/profile')
-      alert('You are logged in!');
-    })
-    .catch(err =>{ alert(err) })
+    //TODO Implement when connecting frontend to the backend //
+    // this.Auth.login(this.state.username,this.state.password)
+    // .then(res => {
+    //   this.props.history.replace('/profile')
+    //   alert('You are logged in!');
+    // })
+    // .catch(err =>{ alert(err) })
   }
 
   render() {
