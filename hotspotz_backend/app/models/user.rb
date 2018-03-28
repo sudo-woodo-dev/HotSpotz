@@ -26,6 +26,16 @@ class User < ApplicationRecord
                        },
                        size: { in: 0..10.megabytes }
 
+  def self.digest(string)
+    cost = if ActiveModel::SecurePassword.min_cost
+             BCrypt::Engine::MIN_COST
+           else
+             BCrypt::Engine.cost
+           end
+
+    BCrypt::Password.create(string, cost: cost)
+  end
+
   private
 
   def parse_avatar_base
