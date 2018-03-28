@@ -5,9 +5,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @subject = users(:test)
   end
 
-  test 'show user' do
+  test 'show user if user id exists' do
     get "/users/#{@subject.id}"
     assert_response 201
+    parsed_response = JSON.parse(response.body)
+    assert_equal parsed_response['username'], 'testuser123'
   end
 
   test 'creates user when valid user_params' do
