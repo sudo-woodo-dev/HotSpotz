@@ -5,7 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @subject = users(:test)
   end
 
-  test 'show user if user id exists' do
+  test 'show user with given id' do
     get "/users/#{@subject.id}"
     assert_response 201
     parsed_response = JSON.parse(response.body)
