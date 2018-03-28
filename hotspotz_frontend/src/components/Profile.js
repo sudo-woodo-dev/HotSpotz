@@ -14,15 +14,15 @@ export default class Profile extends Component {
       },
       reviews: [
         {
-          photo: 'http://via.placeholder.com/200x400',
+          photo: 'http://via.placeholder.com/400x200',
           text: 'Disgusting, will never return'
         },
         {
-          photo: 'http://via.placeholder.com/200x400',
+          photo: 'http://via.placeholder.com/400x200',
           text: 'Smells like apple pie'
         },
         {
-          photo: 'http://via.placeholder.com/200x400',
+          photo: 'http://via.placeholder.com/400x200',
           text: 'Too many birds flying around'
         }
       ]
@@ -44,7 +44,19 @@ export default class Profile extends Component {
             </Row>
           </Col>
           <Col xs={12} md={8}>
-            <code>&lt;{'Col xs={12} md={8}'} /&gt;</code>
+            <Row><h3>Your Reviews</h3></Row>
+            {this.state.reviews.map((review, index) =>{
+              return (
+                <Row id="review-row" key={index}>
+                  <Col>
+                    <img id="photo" src={review.photo} />
+                  </Col>
+                  <Col>
+                    <p id="review-text">{review.text}</p>
+                  </Col>
+                </Row>
+              )
+            })}
           </Col>
         </Row>
       </Grid>
