@@ -55,7 +55,7 @@ export default class Login extends Component {
             />
             <input
               className="form-submit-link"
-              value="Not Registered yet? Sign up here"
+              value="Not registered? Sign up here"
               type = "submit"
             />
           </form>

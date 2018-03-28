@@ -15,7 +15,8 @@
   border-radius: 15px;
   padding: 0.8rem;
   border-color: lightblue;
-  border-width: 15px;
+  border-width: 8px;
+  /* add opacity here?  */
 }
 
 .card > form {
