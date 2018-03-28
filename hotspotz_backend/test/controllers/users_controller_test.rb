@@ -5,7 +5,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @subject = users(:test)
   end
 
-  test 'creates a user' do
+  test 'creates a user when valid user_params' do
     user_params = {
       user: {
         name: 'Test Test',
@@ -17,6 +17,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     }
 
     post '/users', params: user_params
+    assert_response 201
     new_user = User.last
     assert_equal new_user.name, 'Test Test'
   end
