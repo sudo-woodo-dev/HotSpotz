@@ -36,4 +36,9 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     post '/users', params: user_params
     assert_response 422
   end
+
+  test 'show user' do
+    get "/users/#{@subject.id}"
+    assert_response 201
+  end
 end
