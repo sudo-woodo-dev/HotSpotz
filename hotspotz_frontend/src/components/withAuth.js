@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AuthService from '../services/AuthService'
+//TODO Implement when connecting frontend to the backend //
 
 export default function withAuth(WrappedComponent) {
   const Auth = new AuthService()
