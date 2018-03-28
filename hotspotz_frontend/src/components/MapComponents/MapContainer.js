@@ -3,13 +3,13 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 
 const styles = {
   map: {
-    maxWidth: '85%',
+    maxWidth: '70%',
     margin: '5% auto 0'
   },
   container: {
     minHeight: '750px',
     maxHeight: '800px',
-    height: '70%'
+    height: '75%'
   }
 };
 
@@ -54,8 +54,8 @@ export class MapContainer extends React.Component {
             style={styles.map}
             containerStyle={styles.container}
             initialCenter={{
-                lat: 32.7157,
-                lng: -117.1611
+                lat: 32.7251,
+                lng:-117.1997
             }}
             zoom={13}
             draggable={false}
