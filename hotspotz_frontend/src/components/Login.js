@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "../css/Login.css";
 
 
 export default class Login extends Component {
@@ -49,8 +50,13 @@ export default class Login extends Component {
             />
             <input
               className="form-submit"
-              value="SUBMIT"
+              value="Login"
               type="submit"
+            />
+            <input
+              className="form-submit-link"
+              value="Not Registered yet? Sign up here"
+              type = "submit"
             />
           </form>
         </div>
