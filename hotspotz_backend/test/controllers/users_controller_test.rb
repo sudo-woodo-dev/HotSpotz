@@ -5,6 +5,11 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     @subject = users(:test)
   end
 
+  test 'show user' do
+    get "/users/#{@subject.id}"
+    assert_response 201
+  end
+
   test 'creates user when valid user_params' do
     user_params = {
       user: {
@@ -35,10 +40,5 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
     post '/users', params: user_params
     assert_response 422
-  end
-
-  test 'show user' do
-    get "/users/#{@subject.id}"
-    assert_response 201
   end
 end
