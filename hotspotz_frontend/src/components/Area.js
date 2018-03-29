@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import {
   Grid,
   Row,
-  Col,
-  PageHeader,
-  ListGroup,
-  ListGroupItem
+  PageHeader
 } from 'react-bootstrap';
 
 export default class Area extends Component {
