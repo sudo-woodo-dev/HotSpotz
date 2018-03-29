@@ -26,6 +26,17 @@ class User < ApplicationRecord
                          ]
                        },
                        size: { in: 0..10.megabytes }
+  # The following method is required for user test fixtures to work.
+  # It returns the hash digest of a given string.
+  def self.digest(string)
+    cost = if ActiveModel::SecurePassword.min_cost
+             BCrypt::Engine::MIN_COST
+           else
+             BCrypt::Engine.cost
+           end
+
+    BCrypt::Password.create(string, cost: cost)
+  end
 
   private
 
