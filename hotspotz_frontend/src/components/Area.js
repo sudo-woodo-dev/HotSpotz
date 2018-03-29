@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
-import { Grid } from 'react-bootstrap';
+import {
+  Grid,
+  Row,
+  Col,
+  PageHeader,
+  ListGroup,
+  ListGroupItem
+} from 'react-bootstrap';
 
 export default class Area extends Component {
   constructor() {
@@ -34,7 +41,19 @@ export default class Area extends Component {
   render() {
     return (
       <Grid>
-        
+        <Row>
+          <PageHeader>
+            {this.state.area.name}
+          </PageHeader>
+        </Row>
+        <Row>Overall: {this.state.area.overallScore}</Row>
+        <Row>Parking: {this.state.area.parkingScore}</Row>
+        <Row>Cleanliness: {this.state.area.cleanlinessScore}</Row>
+        <Row>Safety: {this.state.area.safetyScore}</Row>
+        <Row>Affordability: {this.state.area.affordabilityScore}</Row>
+        <Row>
+          Family-friendly? {(this.state.area.familyFriendliness) ? 'Yes' : 'No'}
+        </Row>
       </Grid>
     )
   }
