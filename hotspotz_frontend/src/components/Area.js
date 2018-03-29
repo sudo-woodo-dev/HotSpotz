@@ -12,7 +12,7 @@ export default class Area extends Component {
     super();
     this.state = {
       area: {
-        name: 'Fake Area',
+        name: 'Name of Fake Area',
         overallScore: '2.75',
         parkingScore: '3',
         cleanlinessScore: '2',
