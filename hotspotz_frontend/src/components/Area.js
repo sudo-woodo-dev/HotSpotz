@@ -55,11 +55,13 @@ export default class Area extends Component {
           <Row>Safety: {this.state.area.safetyScore}</Row>
           <Row>Affordability: {this.state.area.affordabilityScore}</Row>
           <Row>
-            Family-friendly? {(this.state.area.familyFriendliness) ? 'Yes' : 'No'}
+            Family-friendly? {
+              (this.state.area.familyFriendliness) ? 'Yes' : 'No'
+            }
           </Row>
         </Grid>
         <Grid>
-          {this.state.comments.map((comment, index) =>{
+          {this.state.comments.map((comment, index) => {
             return (
               <Panel id="comment-row" key={index}>
                 <Panel.Heading>
@@ -70,7 +72,7 @@ export default class Area extends Component {
                 <Panel.Body>
                   <Row>
                     <Col>
-                      <img src={comment.photo} />
+                      <img src={comment.photo} alt="comment" />
                     </Col>
                     <Col>
                       {comment.text}
