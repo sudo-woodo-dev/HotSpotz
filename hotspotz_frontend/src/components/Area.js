@@ -12,7 +12,21 @@ export default class Area extends Component {
         safetyScore: '3',
         affordabilityScore: '3',
         familyFriendliness: true
-      }
+      },
+      comments: [
+        {
+          photo: 'http://via.placeholder.com/400x200',
+          text: 'Disgusting, will never return'
+        },
+        {
+          photo: 'http://via.placeholder.com/400x200',
+          text: 'Smells like apple pie'
+        },
+        {
+          photo: 'http://via.placeholder.com/400x200',
+          text: 'Too many birds flying around'
+        }
+      ]
     };
   }
 
