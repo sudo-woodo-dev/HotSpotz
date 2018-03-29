@@ -54,7 +54,7 @@ export class MapContainer extends React.Component {
             style={styles.map}
             containerStyle={styles.container}
             initialCenter={{
-                lat: 32.7251,
+                lat: 32.7301,
                 lng:-117.1997
             }}
             zoom={13}
@@ -127,6 +127,7 @@ export class MapContainer extends React.Component {
                 visible={this.state.showingInfoWindow}>
                   <div>
                     <h1>{this.state.selectedPlace.name}</h1>
+                    <h2>Rating: </h2>
                   </div>
               </InfoWindow>
           </Map>
