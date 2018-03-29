@@ -49,7 +49,7 @@ export default class Profile extends Component {
               return (
                 <Row id="review-row" key={index}>
                   <Col>
-                    <img id="photo" src={review.photo} />
+                    <img id="review-photo" src={review.photo} />
                   </Col>
                   <Col>
                     <p id="review-text">{review.text}</p>
