@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {
   Grid,
   Row,
+  Col,
+  Panel,
   PageHeader
 } from 'react-bootstrap';
 
@@ -20,15 +22,18 @@ export default class Area extends Component {
       },
       comments: [
         {
-          photo: 'http://via.placeholder.com/400x200',
+          author: 'Jane Doe',
+          photo: 'http://via.placeholder.com/200x200',
           text: 'Disgusting, will never return'
         },
         {
-          photo: 'http://via.placeholder.com/400x200',
+          author: 'John Doe',
+          photo: 'http://via.placeholder.com/200x200',
           text: 'Smells like apple pie'
         },
         {
-          photo: 'http://via.placeholder.com/400x200',
+          author:'Doe Doe',
+          photo: 'http://via.placeholder.com/200x200',
           text: 'Too many birds flying around'
         }
       ]
@@ -37,21 +42,46 @@ export default class Area extends Component {
 
   render() {
     return (
-      <Grid>
-        <Row>
-          <PageHeader>
-            {this.state.area.name}
-          </PageHeader>
-        </Row>
-        <Row>Overall: {this.state.area.overallScore}</Row>
-        <Row>Parking: {this.state.area.parkingScore}</Row>
-        <Row>Cleanliness: {this.state.area.cleanlinessScore}</Row>
-        <Row>Safety: {this.state.area.safetyScore}</Row>
-        <Row>Affordability: {this.state.area.affordabilityScore}</Row>
-        <Row>
-          Family-friendly? {(this.state.area.familyFriendliness) ? 'Yes' : 'No'}
-        </Row>
-      </Grid>
+      <div>
+        <Grid>
+          <Row>
+            <PageHeader>
+              {this.state.area.name}
+            </PageHeader>
+          </Row>
+          <Row>Overall: {this.state.area.overallScore}</Row>
+          <Row>Parking: {this.state.area.parkingScore}</Row>
+          <Row>Cleanliness: {this.state.area.cleanlinessScore}</Row>
+          <Row>Safety: {this.state.area.safetyScore}</Row>
+          <Row>Affordability: {this.state.area.affordabilityScore}</Row>
+          <Row>
+            Family-friendly? {(this.state.area.familyFriendliness) ? 'Yes' : 'No'}
+          </Row>
+        </Grid>
+        <Grid>
+          {this.state.comments.map((comment, index) =>{
+            return (
+              <Panel id="comment-row" key={index}>
+                <Panel.Heading>
+                  <Panel.Title componentClass="h5">
+                    Review by {comment.author}
+                  </Panel.Title>
+                </Panel.Heading>
+                <Panel.Body>
+                  <Row>
+                    <Col>
+                      <img src={comment.photo} />
+                    </Col>
+                    <Col>
+                      {comment.text}
+                    </Col>
+                  </Row>
+                </Panel.Body>
+              </Panel>
+            )
+          })}
+        </Grid>
+      </div>
     )
   }
 }
