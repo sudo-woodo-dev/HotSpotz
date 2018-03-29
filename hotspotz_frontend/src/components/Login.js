@@ -3,6 +3,7 @@ import "../css/Login.css";
 import AuthService from '../services/AuthService';
 
 
+
 export default class Login extends Component {
   constructor() {
   super()
@@ -36,6 +37,7 @@ export default class Login extends Component {
           <form onSubmit={this.handleFormSubmit.bind(this)}
           >
             <input
+              id = "username"
               className="form-item"
               placeholder="Username"
               name="username"
@@ -44,6 +46,7 @@ export default class Login extends Component {
               value={this.state.username}
             />
             <input
+              id = "password"
               className="form-item"
               placeholder="Password"
               name="password"
@@ -52,11 +55,13 @@ export default class Login extends Component {
               value={this.state.password}
             />
             <input
+              id = "submit_button"
               className="form-submit"
               value="Login"
               type="submit"
             />
             <input
+              id = "register_button"
               className="form-submit-link"
               value="Not registered? Sign up here"
               type = "submit"
