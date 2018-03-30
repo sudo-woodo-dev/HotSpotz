@@ -75,16 +75,16 @@ export default class Area extends Component {
             return (
               <Panel id="comment-row" key={index}>
                 <Panel.Heading>
-                  <Panel.Title componentClass="h5">
-                    Review by {comment.author}
+                  <Panel.Title>
+                    <h5 id="comment-author">Review by {comment.author}</h5>
                   </Panel.Title>
                 </Panel.Heading>
                 <Panel.Body>
                   <Row>
-                    <Col>
+                    <Col id="comment-photo">
                       <img src={comment.photo} alt="comment" />
                     </Col>
-                    <Col>
+                    <Col id="comment-text">
                       {comment.text}
                     </Col>
                   </Row>

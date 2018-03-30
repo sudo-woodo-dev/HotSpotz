@@ -49,4 +49,24 @@ describe('<Area />', () => {
     const familyFriendliness = component.find('Row#family-friendliness');
     expect(familyFriendliness.length).toBe(1);
   });
+
+  it("renders the areas's review comments", () => {
+    const comments = component.find('Panel#comment-row');
+    expect(comments.length).toBe(3);
+  });
+
+  it("renders each comment's author name", () => {
+    const authorNames = component.find('h5#comment-author');
+    expect(authorNames.length).toBe(3);
+  });
+
+  it('has a text body for each comment', () => {
+    const textBodies = component.find('Col#comment-text');
+    expect(textBodies.length).toBe(3);
+  });
+
+  it('has a photo for each comment', () => {
+    const photos = component.find('Col#comment-photo');
+    expect(photos.length).toBe(3);
+  });
 });
