@@ -45,16 +45,26 @@ export default class Area extends Component {
       <div>
         <Grid>
           <Row>
-            <PageHeader>
+            <PageHeader id="area-name">
               {this.state.area.name}
             </PageHeader>
           </Row>
-          <Row>Overall: {this.state.area.overallScore}</Row>
-          <Row>Parking: {this.state.area.parkingScore}</Row>
-          <Row>Cleanliness: {this.state.area.cleanlinessScore}</Row>
-          <Row>Safety: {this.state.area.safetyScore}</Row>
-          <Row>Affordability: {this.state.area.affordabilityScore}</Row>
-          <Row>
+          <Row id="overall-score">
+            Overall: {this.state.area.overallScore}
+          </Row>
+          <Row id="parking-score">
+            Parking: {this.state.area.parkingScore}
+          </Row>
+          <Row id="cleanliness-score">
+            Cleanliness: {this.state.area.cleanlinessScore}
+          </Row>
+          <Row id="safety-score">
+            Safety: {this.state.area.safetyScore}
+          </Row>
+          <Row id="affordability-score">
+            Affordability: {this.state.area.affordabilityScore}
+          </Row>
+          <Row id="family-friendliness">
             Family-friendly? {
               (this.state.area.familyFriendliness) ? 'Yes' : 'No'
             }
