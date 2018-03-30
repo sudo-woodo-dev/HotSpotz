@@ -1,5 +1,7 @@
 {
   "name": "hotspotz_backend",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bcrypt": "^1.0.3"
+  }
 }
