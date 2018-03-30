@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import '../css/StarRating.css'
+import ReactDOM from 'react-dom';
+import StarRatingComponent from 'react-star-rating-component';
+
 
 
 class NewReview extends Component {
@@ -9,14 +12,17 @@ class NewReview extends Component {
     this.state = {
       form: {
         area: '',
-        dining: '',
         parking: '',
-        cleaniness: '',
+        cleanliness: '',
         safety: '',
         price: '',
         family_friendly: '',
         review_text: '',
-        avatar_base: null
+        avatar_base: null,
+        area_rating: 1,
+        parking_rating: 1,
+        cleanliness_rating: 1,
+        safety_rating: 1
       },
       apiUrl: "http://localhost:3000",
       review: [],
@@ -31,6 +37,21 @@ class NewReview extends Component {
       this.setState({form: formState})
     }
 
+  onStarClick(nextValue, prevValue, name) {
+      if (name == "area_rating") {
+        this.setState({area_rating: nextValue});
+      }
+      else if (name == "parking_rating") {
+        this.setState({parking_rating: nextValue});
+      }
+      else if (name == "cleanliness_rating") {
+        this.setState({cleanliness_rating: nextValue});
+      }
+      else {
+        this.setState({safety_rating: nextValue});
+      }
+    }
+
   handleSubmit(event) {
       event.preventDefault();
     }
@@ -40,6 +61,11 @@ class NewReview extends Component {
 }
 
   render() {
+     const { area_rating } = this.state;
+     const { parking_rating } = this.state;
+     const { cleanliness_rating } = this.state;
+     const { safety_rating } = this.state;
+
     return (
       <div className="center">
         <div className="card">
@@ -58,57 +84,51 @@ class NewReview extends Component {
             <option value="loma_portal">Loma Portal</option>
           </select>
 
+      <div>
+        <h3>Rate the Area: {area_rating}/5</h3>
+        <StarRatingComponent
+          name="area_rating"
+          starCount={5}
+          value={area_rating}
+          onStarClick={this.onStarClick.bind(this)}
+        />
+        <h3>Rate the Parking: {parking_rating}/5</h3>
+        <StarRatingComponent
+          name="parking_rating"
+          starCount={5}
+          value={parking_rating}
+          onStarClick={this.onStarClick.bind(this)}
+        />
+        <h3>Rate the Cleanliness: {cleanliness_rating}/5</h3>
+        <StarRatingComponent
+          name="cleanliness_rating"
+          starCount={5}
+          value={cleanliness_rating}
+          onStarClick={this.onStarClick.bind(this)}
+        />
+        <h3>Rate the Safety: {safety_rating}/5</h3>
+        <StarRatingComponent
+          name="safety_rating"
+          starCount={5}
+          value={safety_rating}
+          onStarClick={this.onStarClick.bind(this)}
+        />
+      </div>
 
-      <fieldset class="rating">
-        DINING
-      <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
-      <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
-      <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
-      <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
-      <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
-  </fieldset>
-
-  <fieldset class="rating2">
-    PARKING
-      <input type="radio" id="star6" name="rating2" value="5" /><label for="star6" title="Rocks!">5 stars</label>
-      <input type="radio" id="star7" name="rating2" value="4" /><label for="star7" title="Pretty good">4 stars</label>
-      <input type="radio" id="star8" name="rating2" value="3" /><label for="star8" title="Meh">3 stars</label>
-      <input type="radio" id="star9" name="rating2" value="2" /><label for="star9" title="Kinda bad">2 stars</label>
-      <input type="radio" id="star10" name="rating2" value="1" /><label for="star10" title="Sucks big time">1 star</label>
-  </fieldset>
-
-    <fieldset class="rating3">
-      CLEANLINESS
-      <input type="radio" id="star11" name="rating3" value="5" /><label for="star11" title="Rocks!">5 stars</label>
-      <input type="radio" id="star12" name="rating3" value="4" /><label for="star12" title="Pretty good">4 stars</label>
-      <input type="radio" id="star13" name="rating3" value="3" /><label for="star13" title="Meh">3 stars</label>
-      <input type="radio" id="star14" name="rating3" value="2" /><label for="star14" title="Kinda bad">2 stars</label>
-      <input type="radio" id="star15" name="rating3" value="1" /><label for="star15" title="Sucks big time">1 star</label>
-  </fieldset>
-
-  <fieldset class="rating4">
-    SAFETY
-      <input type="radio" id="star16" name="rating4" value="5" /><label for="star16" title="Rocks!">5 stars</label>
-      <input type="radio" id="star17" name="rating4" value="4" /><label for="star17" title="Pretty good">4 stars</label>
-      <input type="radio" id="star18" name="rating4" value="3" /><label for="star18" title="Meh">3 stars</label>
-      <input type="radio" id="star19" name="rating4" value="2" /><label for="star19" title="Kinda bad">2 stars</label>
-      <input type="radio" id="star20" name="rating4" value="1" /><label for="star20" title="Sucks big time">1 star</label>
-  </fieldset>
-            <input
+           <input
               className="form-item"
               placeholder="$ - Price per Person Spent"
-              name="country"
+              name="price"
               type="text"
               onChange={this.handleChange.bind(this)}
-              value={this.state.form.country}
+              value={this.state.form.price}
             />
             <div>
-            Family Friendly?
+            Family Friendly? <nbs />
+            <input type="radio" name="family_friendly" value="yes"  /> YES <nbs />
+            <input type="radio" name="family_friendly" value="no"  /> NO
             </div>
 
-            <input type="radio" name="family_friendly" value="yes"  /> YES
-            <input type="radio" name="family_friendly" value="no"  /> NO
-            <br />
 
             <div>Write your review here: </div>
             <textarea>
