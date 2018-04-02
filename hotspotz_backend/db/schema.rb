@@ -28,9 +28,6 @@ ActiveRecord::Schema.define(version: 20180330188257) do
     t.index ["user_ref_id"], name: "index_reviews_on_user_ref_id"
   end
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "username"
