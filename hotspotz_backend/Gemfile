@@ -65,11 +65,4 @@ gem 'knock'
 gem 'rspec-rails'
 gem 'chromedriver-helper'
 
-group :test do
-  gem 'capybara'
-  gem 'rspec-example_steps'
-  gem 'launchy'
-  gem 'selenium-webdriver'
-end
-
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
