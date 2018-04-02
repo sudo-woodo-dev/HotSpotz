@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-resources :areas
+
+    resources :areas
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: %i[show create], defaults: { format: :json }
   resources :reviews, only: %i[show create], defaults: { format: :json }

@@ -1,7 +1,2 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  neighborhood: MyString
-
-two:
-  neighborhood: MyString
+test:
+    neighborhood: Little Italy
