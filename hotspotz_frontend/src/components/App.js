@@ -1,9 +1,10 @@
 import React from 'react';
 import Content from './Content';
-import withAuth from './withAuth.js'
+import Navigation from './Navigation';
 
 const App = () => (
   <div>
+    <Navigation />
     <Content />
   </div>
 );
