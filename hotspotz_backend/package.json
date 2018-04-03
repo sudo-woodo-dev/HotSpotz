@@ -2,6 +2,7 @@
   "name": "hotspotz_backend",
   "private": true,
   "dependencies": {
-    "bcrypt": "^1.0.3"
+    "bcrypt": "^1.0.3",
+    "imagemagick": "^0.1.3"
   }
 }
