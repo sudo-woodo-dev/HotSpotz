@@ -5,6 +5,7 @@ import Profile from './Profile';
 import NewReview from './NewReview'
 import Home from './Home.js';
 import Area from './Area';
+import SignUp from './Signmeup.js'
 
 const Content = () => (
   <Switch>
@@ -13,6 +14,7 @@ const Content = () => (
     <Route exact path="/profile" component={Profile} />
     <Route exact path="/newreview" component={NewReview} />
     <Route exact path="/area" component={Area} />
+    <Route exact path="/signmeup" component={SignUp} />
   </Switch>
 );
 
