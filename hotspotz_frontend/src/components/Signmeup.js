@@ -99,7 +99,9 @@ class Registration extends React.Component {
         }
       }
    }
-
+fileChangerHandler(event){
+  const file =event.target.file[0]
+}
   render() {
 
     return (
@@ -143,9 +145,15 @@ class Registration extends React.Component {
               {this.state.errorPasswordMessage}
             </div>
             <br />
+            <input
+            type="file"
+            onChange={this.fileChangerHandler.bind(this)}
+            />
             <input type="button" value="SUBMIT"
               onClick = { this.onSubmit.bind(this) } />
+
           </form>
+
 
 
 
