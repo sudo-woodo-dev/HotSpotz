@@ -4,7 +4,7 @@ import AuthService from '../services/AuthService';
 
 
 
-export default class Login extends Component {
+class Login extends Component {
   constructor() {
   super()
   this.Auth = new AuthService()
@@ -20,13 +20,12 @@ export default class Login extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    //TODO Implement when connecting frontend to the backend //
-    // this.Auth.login(this.state.username,this.state.password)
-    // .then(res => {
-    //   this.props.history.replace('/profile')
-    //   alert('You are logged in!');
-    // })
-    // .catch(err =>{ alert(err) })
+    this.Auth.login(this.state.username, this.state.password)
+    .then(res => {
+      this.props.history.replace('/')
+      alert('You are logged in!');
+    })
+    .catch(err =>{ alert(err) })
   }
 
   render() {
@@ -72,3 +71,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default Login

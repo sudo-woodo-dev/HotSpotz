@@ -8,11 +8,11 @@ class User < ApplicationRecord
             presence: true, length: { minimum: 6, maximum: 20 }
   validates :email, :password_confirmation, presence: true
 
-  validates_format_of :name, with: /\A[a-z ]+\z/i
-  validates_format_of :username, with: /\A[a-zA-Z0-9]+\Z/
-  validates_format_of :email,
-                      with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-  validates_format_of :password, with: /(?=.*[A-Z]+)(?=.*[0-9]+).*/
+  # validates_format_of :name, with: /[a-z]/i
+  # validates_format_of :username, with: /[a-zA-Z0-9]/
+  # validates_format_of :email,
+  #                     with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  # validates_format_of :password, with: /(?=.*[A-Z]+)(?=.*[0-9]+).*/
 
   has_attached_file :avatar,
                     styles: { small: '64x64', med: '100x100', large: '200x200' }

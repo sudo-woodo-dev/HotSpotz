@@ -1,0 +1,50 @@
+.navbar {
+  background-image: url("http://www.seattle.gov/light/ami/images/Homepage_banner.jpg");
+  padding-right: 70px;
+  overflow: hidden;
+  padding-top:20px;
+
+}
+
+.navbar-brand {
+  font-size: 25px;
+  margin-right: 10px;
+  padding-bottom:10px;
+}
+
+.hello {
+  font-size: 14px;
+}
+
+.hello2 {
+  font-size: 14px;
+
+}
+
+.space {
+  margin-top: -15px;
+}
+
+.hello3 {
+  padding-top:15px;
+  font-size: 14px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
