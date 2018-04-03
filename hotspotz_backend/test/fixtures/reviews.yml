@@ -9,7 +9,7 @@ one:
   price: 1.5
   family_friendly: false
   review_text: MyString
-  userID: 1
+  user_ref: 1
 
 two:
   area: MyString
@@ -20,4 +20,4 @@ two:
   price: 1.5
   family_friendly: false
   review_text: MyString
-  userID: 1
+  user_ref: 1

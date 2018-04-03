@@ -5,9 +5,48 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-avatar_path = "#{Rails.root}/app/assets/images/Default_Profile_Image.jpg"
-image_file = File.new(avatar_path)
-#
-# Avatar.create(:id => 1,  :asset => ActionDispatch::Http::UploadedFile.new( :filename => File.basename(image_file),     :tempfile => image_file, :type => MIME::Types.type_for(image_path).first.content_type) )
-
-User.create({name: 'sudowoodo', username: 'sudowoodo', email: 'email@sudowoodo.com', password: 'Password1', password_confirmation: 'Password1', avatar_base: "$image_file"})
+area_attributes = [
+{
+id: 1,
+neighborhood:"Marina Embarcadero"
+},
+{
+id: 2,
+neighborhood:"East Village"
+},
+{
+id: 3,
+neighborhood:"Little Italy"
+},
+{
+id: 4,
+neighborhood:"North Park"
+},
+{
+id: 5,
+neighborhood:"Hillcrest"
+},
+{
+id: 6,
+neighborhood:"Gaslamp Quarter"
+},
+{
+id: 7,
+neighborhood:"Coronado"
+},
+{
+id: 8,
+neighborhood:"Shelter Island Area"
+},
+{
+id: 9,
+neighborhood:"Ocean Beach"
+},
+{
+id: 10,
+neighborhood:"Ioma Portal"
+}
+]
+area_attributes.each do |attributes|
+  Area.create(attributes)
+end

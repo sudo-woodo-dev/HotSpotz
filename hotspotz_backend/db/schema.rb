@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330188257) do
+ActiveRecord::Schema.define(version: 20180330224430) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string "neighborhood"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "reviews", force: :cascade do |t|
     t.string "area"
@@ -42,5 +48,5 @@ ActiveRecord::Schema.define(version: 20180330188257) do
     t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
-
+  enable_extension "plpgsql"
 end
