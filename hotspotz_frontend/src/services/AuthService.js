@@ -8,6 +8,7 @@ export default class AuthService {
     }
 
     login(username, password) {
+        console.log(this.domain)
       return this.fetch(`${this.domain}/user_token`, { // Our backend endpoint
         method: 'POST',
         body: JSON.stringify({
