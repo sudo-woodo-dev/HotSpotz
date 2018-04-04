@@ -192,8 +192,8 @@ class NewReview extends Component {
             />
             <div>
             Family Friendly? <nbs />
-            <input type="radio" onClick={this.state.family_friendly = {true}} name="family_friendly" value="yes"  /> YES <nbs />
-            <input type="radio" onClick={this.state.family_friendly = false} name="family_friendly" value="no"  /> NO
+            <input type="radio" name="family_friendly" value="yes"  /> YES <nbs />
+            <input type="radio" name="family_friendly" value="no"  /> NO
             </div>
 
 
