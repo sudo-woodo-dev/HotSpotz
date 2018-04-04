@@ -11,7 +11,7 @@ class NewReview extends Component {
     super(props)
     this.state = {
       form: {
-        area: 'east_village',
+        area: 'eastvillage',
         area_rating: 0,
         parking: 0,
         cleanliness: 0,
@@ -135,14 +135,14 @@ class NewReview extends Component {
           <form onSubmit={this.handleSubmit.bind(this)}>
             <div> CHOOSE YOUR AREA </div>
               <select name='area' onChange={this.handleChange.bind(this)}>
-                <option value="east_village">East Village</option>
-                <option value="little_italy">Little Italy</option>
-                <option value="north_park">North Park</option>
+                <option value="eastvillage">East Village</option>
+                <option value="littleitaly">Little Italy</option>
+                <option value="northpark">North Park</option>
                 <option value="gaslamp">Gaslamp</option>
                 <option value="coronado">Coronado</option>
-                <option value="shelter_island_area">Shelter Island Area</option>
-                <option value="ocean_beach">Ocean Beach</option>
-                <option value="loma_portal">Loma Portal</option>
+                <option value="shelterisland">Shelter Island Area</option>
+                <option value="oceanbeach">Ocean Beach</option>
+                <option value="lomaportal">Loma Portal</option>
               </select>
             <div>
         <h3>Rate the Area: {this.state.area_rating}/5</h3>
@@ -219,7 +219,7 @@ class NewReview extends Component {
           </form>
         </div>
 
-        { this.state.newReviewSuccess && <Redirect to='/reviews' /> }
+        { this.state.newReviewSuccess && <Redirect to={`${this.state.form.area}`} /> }
       </div>
     );
   }
