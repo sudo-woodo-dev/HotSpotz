@@ -11,7 +11,7 @@ const Navigation = () => (
     </Navbar.Header>
     <Nav>
       <div className = "space">
-      <NavItem className = "hello" eventKey={1} href="/home">
+      <NavItem className = "hello" eventKey={1} href="/register">
         <b>Register</b>
       </NavItem>
       <NavItem className = "hello" eventKey={2} href="/login">

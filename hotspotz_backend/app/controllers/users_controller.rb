@@ -7,14 +7,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new()
-    user.name = params[:first_name]
-    user.username = params[:username]
-    user.email = params[:email]
-    user.password = params[:password]
-    user.password_confirmation = params[:password_confirmation]
-    user.avatar_base = params[:avatar_base]
-    
+    user = User.new(user_params)
+    puts user.valid?
+    puts user.errors.messages
+
     if user.save
      token = Knock::AuthToken.new(payload: { sub: user.id }).token
      payload = {
@@ -30,6 +26,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:id, :name, :username, :email, :password, :password_confirmation, :avatar_base)
+    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :avatar_base)
   end
 end

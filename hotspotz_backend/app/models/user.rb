@@ -15,7 +15,8 @@ class User < ApplicationRecord
   # validates_format_of :password, with: /(?=.*[A-Z]+)(?=.*[0-9]+).*/
 
   has_attached_file :avatar,
-                    styles: { small: '64x64', med: '100x100', large: '200x200' }
+                    styles: { small: '64x64', med: '100x100', large: '200x200' },
+                    :default_url => ':style/image.png'
   validates_attachment :avatar,
                        content_type: {
                          content_type: [
