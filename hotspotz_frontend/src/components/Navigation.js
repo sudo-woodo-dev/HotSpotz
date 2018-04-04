@@ -6,25 +6,25 @@ const Navigation = () => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="/">HotSpotz</a>
+        <a href="/"><h1 className = "nav">Find the Best San Diego Hot Spot</h1></a>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav>
-      <div className = "space">
-      <NavItem className = "hello" eventKey={1} href="/home">
-        <b>Register</b>
+      <div className = "choices">
+      <NavItem className = "hello" eventKey={1} href="/signmeup">
+        <button type="button" class="btn btn-primary">Register</button>
       </NavItem>
       <NavItem className = "hello" eventKey={2} href="/login">
-        Login
+        <button type="button" class="btn btn-info">Login</button>
       </NavItem>
       <NavItem className = "hello2" eventKey={5} href="/profile">
-        Profile
+        <button type="button" class="btn btn-primary">Profile</button>
       </NavItem>
       <NavItem className = "hello2" eventKey={5} href="/review">
-        Review
+        <button type="button" class="btn btn-info">Review</button>
       </NavItem>
       <NavItem className = "hello2" eventKey={5} href="/newreview">
-        Submit New Review
+      <button type="button" class="btn btn-primary">Submit New Review</button>
       </NavItem>
       </div>
     </Nav>

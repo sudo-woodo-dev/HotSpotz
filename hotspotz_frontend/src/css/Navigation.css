@@ -1,24 +1,75 @@
 .navbar {
-  background-image: url("http://www.seattle.gov/light/ami/images/Homepage_banner.jpg");
+  /* background-image: url("https://www.marinainnsandiego.com/assets/themes/marinainnsandiego/img/San-diego-skyline-near-marina-Inn-&-Suites.jpg");
+  background-color: blue;
   padding-right: 70px;
   overflow: hidden;
-  padding-top:20px;
+  padding-top:400px */
+  height: 35em;
+  padding-top: 9em;
+  margin-bottom: 2em;
+  background-image: url(https://www.marinainnsandiego.com/assets/themes/marinainnsandiego/img/San-diego-skyline-near-marina-Inn-&-Suites.jpg);
+  background-size: cover;
+  color: #fff;
+  text-align: center;
 
+
+}
+
+h1.nav {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 36px;
+  margin-top: 20px;
+  margin-bottom: 1em;
+  font-size: 100px;
+  color: white;
+  margin-right: 250px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 36px;
+  margin-top: -100px;
+  margin-bottom: 1em;
+  font-size: 80px;
+  color: white;
+  margin-left: -7.8em;
+}
+
+.brand {
+  padding-bottom:500px;
 }
 
 .navbar-brand {
   font-size: 25px;
   margin-right: 10px;
   padding-bottom:10px;
+  text-indent: 20em;
+  padding-top: 80px;
 }
 
-.hello {
-  font-size: 14px;
+.homepage {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-.hello2 {
-  font-size: 14px;
+.choices {
+  padding-left:240px;
+  padding-bottom:30px;
+}
 
+.location {
+  padding-left:640px;
+  font-size: 50px;
+}
+
+.border {
+  background-color: #fff;
+  border-radius: 15px;
+  border-color: lightblue;
+  border-width: 8px;
 }
 
 .space {
@@ -47,4 +98,8 @@
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+nav {
+  padding-right:500px;
 }

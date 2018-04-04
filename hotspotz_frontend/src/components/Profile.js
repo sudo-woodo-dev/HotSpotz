@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import '../css/Profile.css';
+import '../css/Login.css';
 
 export default class Profile extends Component {
   constructor() {

@@ -106,7 +106,7 @@ fileChangerHandler(event){
 
     return (
       <div>
-      <h1>HOTSPOTZ</h1>
+    
 
         <div className="container">
           <h2>SIGN UP</h2>
