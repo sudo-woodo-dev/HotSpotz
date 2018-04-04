@@ -5,8 +5,8 @@ import Profile from './Profile';
 import NewReview from './NewReview'
 import Home from './Home.js';
 import Area from './Area';
-import SignUp from './Signmeup.js'
-import Register from './Register.js'
+import SignUp from './Signmeup'
+import Register from './Register'
 
 const Content = () => (
   <Switch>
