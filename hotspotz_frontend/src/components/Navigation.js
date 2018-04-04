@@ -17,32 +17,31 @@ export default class Navigation extends Component {
   render() {
     return (
       <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href="/">HotSpotz</a>
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav>
-          <div className = "space">
-          <NavItem className = "hello" eventKey={1} href="/register">
-            <b>Register</b>
-          </NavItem>
-          <NavItem className = "hello" eventKey={2} href="/login">
-            Login
-          </NavItem>
-          <NavItem className = "hello2" eventKey={5} href="/profile">
-            Profile
-          </NavItem>
-          <NavItem className = "hello2" eventKey={5} href="/review">
-            Review
-          </NavItem>
-          <NavItem className = "hello2" eventKey={5} href="/newreview">
-            Submit New Review
-          </NavItem>
-          <NavItem className = "hello2" onClick={this.handleLogout.bind(this)} href={'/login'}>Logout</NavItem>
-          </div>
-        </Nav>
-      </Navbar>
+   <Navbar.Header>
+     <Navbar.Brand>
+       <a href="/"><h1 className = "nav">Find the Best San Diego Hot Spot</h1></a>
+     </Navbar.Brand>
+   </Navbar.Header>
+   <Nav>
+     <div className = "choices">
+     <NavItem className = "hello" eventKey={1} href="/signmeup">
+       <button type="button" class="btn btn-primary">Register</button>
+     </NavItem>
+     <NavItem className = "hello" eventKey={2} href="/login">
+       <button type="button" class="btn btn-info">Login</button>
+     </NavItem>
+     <NavItem className = "hello2" eventKey={5} href="/profile">
+       <button type="button" class="btn btn-primary">Profile</button>
+     </NavItem>
+     <NavItem className = "hello2" eventKey={5} href="/review">
+       <button type="button" class="btn btn-info">Review</button>
+     </NavItem>
+     <NavItem className = "hello2" eventKey={5} href="/newreview">
+     <button type="button" class="btn btn-primary">Submit New Review</button>
+     </NavItem>
+     </div>
+   </Nav>
+ </Navbar>
 )
 }
 };

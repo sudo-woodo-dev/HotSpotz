@@ -60,3 +60,11 @@
   font-size:15px;
   text-decoration:underline;
 }
+
+body {
+  /* background-image: url("https://files.slack.com/files-tmb/T04B40L2C-F9X1SLEKV-18fe58d96e/image_1024.png"); */
+  background-color: #f5f5f5!important;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size:cover;
+}

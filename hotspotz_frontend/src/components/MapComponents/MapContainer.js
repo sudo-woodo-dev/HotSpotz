@@ -44,9 +44,15 @@ export class MapContainer extends React.Component {
     }
   }
 
+
     render() {
         const {directions} = this.state;
         return (
+          <div>
+          <div className = "location">
+          Pick Your Destination Point
+          </div>
+          <div className = "border">
           <Map
             google={this.props.google}
             onClick={this.onMapClicked}
@@ -131,6 +137,8 @@ export class MapContainer extends React.Component {
                   </div>
               </InfoWindow>
           </Map>
+          </div>
+          </div>
     );
   }
 }

@@ -15,6 +15,7 @@ import LomaPortal from './areas/LomaPortal'
 import NorthPark from './areas/NorthPark'
 import OceanBeach from './areas/OceanBeach'
 import ShelterIslandArea from './areas/ShelterIslandArea'
+import Register from './Register'
 
 const Content = () => (
   <Switch>
