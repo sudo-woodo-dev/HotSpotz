@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "../css/Login.css";
 import AuthService from '../services/AuthService';
+import withAuth from './withAuth'
 
 
 
@@ -16,6 +17,12 @@ class Login extends Component {
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value })
+  }
+
+
+  handleLogout(){
+    this.Auth.logout()
+    this.props.history.replace('/login')
   }
 
   handleFormSubmit(e) {
