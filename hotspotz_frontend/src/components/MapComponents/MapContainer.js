@@ -133,7 +133,7 @@ export class MapContainer extends React.Component {
                 visible={this.state.showingInfoWindow}>
                   <div>
                     <h1>{this.state.selectedPlace.name}</h1>
-                    <h2>Rating: </h2>
+                    <h2>Rating: {this.state.selectedPlace.rating}</h2>
                   </div>
               </InfoWindow>
           </Map>

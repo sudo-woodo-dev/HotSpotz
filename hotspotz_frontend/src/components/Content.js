@@ -5,7 +5,16 @@ import Profile from './Profile';
 import NewReview from './NewReview'
 import Home from './Home.js';
 import Area from './Area';
-import SignUp from './Signmeup'
+import SignUp from './Signmeup.js'
+import Register from './Register.js'
+import Coronado from './areas/Coronado'
+import EastVillage from './areas/EastVillage'
+import Gaslamp from './areas/Gaslamp'
+import LittleItaly from './areas/LittleItaly'
+import LomaPortal from './areas/LomaPortal'
+import NorthPark from './areas/NorthPark'
+import OceanBeach from './areas/OceanBeach'
+import ShelterIslandArea from './areas/ShelterIslandArea'
 import Register from './Register'
 
 const Content = () => (
@@ -16,6 +25,14 @@ const Content = () => (
     <Route exact path="/newreview" component={NewReview} />
     <Route exact path="/area" component={Area} />
     <Route exact path="/register" component={Register} />
+    <Route exact path="/coronado" component={Coronado} />
+    <Route exact path="/eastvillage" component={EastVillage} />
+    <Route exact path="/gaslamp" component={Gaslamp} />
+    <Route exact path="/littleitaly" component={LittleItaly} />
+    <Route exact path="/lomaportal" component={LomaPortal} />
+    <Route exact path="/northpark" component={NorthPark} />
+    <Route exact path="/oceanbeach" component={OceanBeach} />
+    <Route exact path="/shelterisland" component={ShelterIslandArea} />
   </Switch>
 );
 
