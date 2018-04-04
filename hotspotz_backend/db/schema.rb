@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180330224430) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_ref_id"
+    t.float "area_rating"
     t.index ["user_ref_id"], name: "index_reviews_on_user_ref_id"
   end
 

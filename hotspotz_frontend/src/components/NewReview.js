@@ -11,21 +11,18 @@ class NewReview extends Component {
     super(props)
     this.state = {
       form: {
-        area: '',
-        parking: '',
-        cleanliness: '',
-        safety: '',
-        price: '',
-        family_friendly: '',
-        review_text: '',
-        avatar_base: null,
-        area_rating: 1,
-        parking_rating: 1,
-        cleanliness_rating: 1,
-        safety_rating: 1
+        area: 'east_village',
+        area_rating: 0,
+        parking: 0,
+        cleanliness: 0,
+        safety: 0,
+        dining: 0,
+        price: 0,
+        family_friendly: false,
+        review_text: ''
       },
       apiUrl: "http://localhost:3000",
-      review: [],
+      reviews: [],
       newReviewSuccess: false,
       errors: null
     }
@@ -39,78 +36,148 @@ class NewReview extends Component {
 
   onStarClick(nextValue, prevValue, name) {
       if (name == "area_rating") {
-        this.setState({area_rating: nextValue});
+        this.setState({area_rating: nextValue})
+        const formState = Object.assign({}, this.state.form)
+        formState[name] = nextValue
+        this.setState({form: formState})
       }
-      else if (name == "parking_rating") {
-        this.setState({parking_rating: nextValue});
+      else if (name == "parking") {
+        this.setState({parking: nextValue});
+        const formState = Object.assign({}, this.state.form)
+        formState[name] = nextValue
+        this.setState({form: formState})
       }
-      else if (name == "cleanliness_rating") {
-        this.setState({cleanliness_rating: nextValue});
+      else if (name == "cleanliness") {
+        this.setState({cleanliness: nextValue});
+        const formState = Object.assign({}, this.state.form)
+        formState[name] = nextValue
+        this.setState({form: formState})
+      }
+      else if (name == "dining") {
+        this.setState({dining: nextValue});
+        const formState = Object.assign({}, this.state.form)
+        formState[name] = nextValue
+        this.setState({form: formState})
       }
       else {
-        this.setState({safety_rating: nextValue});
+        this.setState({safety: nextValue});
+        const formState = Object.assign({}, this.state.form)
+        formState[name] = nextValue
+        this.setState({form: formState})
       }
     }
 
-  handleSubmit(event) {
+    handleSubmit(event) {
       event.preventDefault();
+
+      fetch(`${this.state.apiUrl}/reviews`,
+        {
+          body: JSON.stringify({review: this.state.form}),
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          method: "POST"
+        }
+      )
+      .then((rawResponse) => {
+        return Promise.all([rawResponse.status, rawResponse.json()])
+      })
+      .then((parsedResponse) => {
+        if (parsedResponse[0] === 422) {
+          this.setState({errors: parsedResponse[1]})
+        } else {
+          const reviews = Object.assign([], this.state.reviews)
+          reviews.push(parsedResponse[1])
+          this.setState({
+            reviews: reviews,
+            errors: null,
+            newReviewSuccess: true
+          });
+        }
+      });
     }
 
-  fileChangeHandler(event){
-  const file = event.target.files[0]
-}
+    getBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+      });
+    }
+
+    fileChangeHandler(event){
+      const file = event.target.files[0]
+      this.getBase64(file).then( (fileString) => {
+        const formState = Object.assign({}, this.state.form)
+        formState.avatar_base = fileString
+        this.setState({form: formState})
+      })
+    }
+
+    errorsFor(attribute){
+      var errorString = ""
+      if(this.props.errors && this.props.errors[attribute]){
+        const errors = this.props.errors[attribute]
+        if(errors){
+          errorString = errors.join(", ")
+        }
+      }
+      return errorString === "" ? null : errorString
+    }
 
   render() {
-     const { area_rating } = this.state;
-     const { parking_rating } = this.state;
-     const { cleanliness_rating } = this.state;
-     const { safety_rating } = this.state;
 
     return (
       <div className="center">
         <div className="card">
           <h1 className = "title">Submit Your Review</h1>
-          <form onSubmit={this.handleSubmit.bind(this)}
-          >
-          <div> CHOOSE YOUR AREA </div>
-          <select>
-            <option value="east_village">East Village</option>
-            <option value="little_italy">Little Italy</option>
-            <option value="north_park">North Park</option>
-            <option value="gaslamp">Gaslamp</option>
-            <option value="coronado">Coronado</option>
-            <option value="shelter_island_area">Shelter Island Area</option>
-            <option value="ocean_beach">Ocean Beach</option>
-            <option value="loma_portal">Loma Portal</option>
-          </select>
-
-      <div>
-        <h3>Rate the Area: {area_rating}/5</h3>
+          <form onSubmit={this.handleSubmit.bind(this)}>
+            <div> CHOOSE YOUR AREA </div>
+              <select name='area' onChange={this.handleChange.bind(this)}>
+                <option value="east_village">East Village</option>
+                <option value="little_italy">Little Italy</option>
+                <option value="north_park">North Park</option>
+                <option value="gaslamp">Gaslamp</option>
+                <option value="coronado">Coronado</option>
+                <option value="shelter_island_area">Shelter Island Area</option>
+                <option value="ocean_beach">Ocean Beach</option>
+                <option value="loma_portal">Loma Portal</option>
+              </select>
+            <div>
+        <h3>Rate the Area: {this.state.area_rating}/5</h3>
         <StarRatingComponent
           name="area_rating"
           starCount={5}
-          value={area_rating}
+          value={this.state.area_rating}
           onStarClick={this.onStarClick.bind(this)}
         />
-        <h3>Rate the Parking: {parking_rating}/5</h3>
+        <h3>Rate the Parking: {this.state.parking}/5</h3>
         <StarRatingComponent
-          name="parking_rating"
+          name="parking"
           starCount={5}
-          value={parking_rating}
+          value={this.state.parking}
           onStarClick={this.onStarClick.bind(this)}
         />
-        <h3>Rate the Cleanliness: {cleanliness_rating}/5</h3>
+        <h3>Rate the Cleanliness: {this.state.cleanliness}/5</h3>
         <StarRatingComponent
-          name="cleanliness_rating"
+          name="cleanliness"
           starCount={5}
-          value={cleanliness_rating}
+          value={this.state.cleanliness}
           onStarClick={this.onStarClick.bind(this)}
         />
-        <h3>Rate the Safety: {safety_rating}/5</h3>
+        <h3>Rate the Safety: {this.state.safety}/5</h3>
         <StarRatingComponent
-          name="safety_rating"
+          name="safety"
           starCount={5}
-          value={safety_rating}
+          value={this.state.safety}
+          onStarClick={this.onStarClick.bind(this)}
+        />
+        <h3>Rate the Dining: {this.state.dining}/5</h3>
+        <StarRatingComponent
+          name="dining"
+          starCount={5}
+          value={this.state.dining}
           onStarClick={this.onStarClick.bind(this)}
         />
       </div>
@@ -131,9 +198,14 @@ class NewReview extends Component {
 
 
             <div>Write your review here: </div>
-            <textarea>
-
-            </textarea>
+            <input
+               className="form-item"
+               placeholder="Write Your Review Here"
+               name="review_text"
+               type="textarea"
+               onChange={this.handleChange.bind(this)}
+               value={this.state.form.review_text}
+             />
             <br />
             <input
               type="file"
