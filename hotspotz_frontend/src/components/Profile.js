@@ -5,8 +5,12 @@ import AuthService from '../services/AuthService'
 import StarRatingComponent from 'react-star-rating-component';
 
 const Auth = new AuthService()
-const loggedUser = Auth.getUserId()
-// const userReviews =
+const loggedUser = getLoggedUser()
+function getLoggedUser(){
+  if(Auth.loggedIn()){
+    return Auth.getUserId()
+  }
+}
 
 export default class Profile extends Component {
   constructor() {
@@ -46,7 +50,7 @@ export default class Profile extends Component {
         <Row className="show-grid">
           <Col xs={6} md={4}>
             <Row>
-              <img id="avatar" src={this.state.user.avatar} alt="Avatar" />
+              <p>{this.state.user.avatar_base}</p>
             </Row>
             <Row id="name">
               <p>{this.state.user.name}</p>
