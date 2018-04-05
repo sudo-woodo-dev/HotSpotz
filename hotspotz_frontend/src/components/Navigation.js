@@ -11,6 +11,7 @@ export default class Navigation extends Component {
 
   handleLogout(){
     Auth.logout()
+    this.props.history.replace('/login')
   }
 
 
@@ -39,6 +40,9 @@ export default class Navigation extends Component {
      <NavItem className = "hello2" eventKey={5} href="/newreview">
      <button type="button" class="btn btn-primary">Submit New Review</button>
      </NavItem>
+     <NavItem className = "hello2" eventKey={5} href="/login">
+      <button type="button" class="btn btn-primary" onClick={Auth.logout}>Logout</button>
+    </NavItem>
      </div>
    </Nav>
  </Navbar>

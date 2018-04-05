@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../css/Login.css";
 import AuthService from '../services/AuthService';
 import withAuth from './withAuth'
+import { Link } from 'react-router-dom' 
 
 
 
@@ -66,12 +67,9 @@ class Login extends Component {
               value="Login"
               type="submit"
             />
-            <input
+            <Link to="/register"
               id = "register_button"
-              className="form-submit-link"
-              value="Not registered? Sign up here"
-              type = "submit"
-            />
+              className="form-submit-link">Not Registered? Sign up here</Link>
           </form>
         </div>
       </div>

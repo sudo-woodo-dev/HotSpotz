@@ -5,8 +5,6 @@ import Profile from './Profile';
 import NewReview from './NewReview'
 import Home from './Home.js';
 import Area from './Area';
-import SignUp from './Signmeup.js'
-import Register from './Register.js'
 import Coronado from './areas/Coronado'
 import EastVillage from './areas/EastVillage'
 import Gaslamp from './areas/Gaslamp'
