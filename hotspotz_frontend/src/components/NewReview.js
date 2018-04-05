@@ -3,8 +3,9 @@ import { Redirect } from 'react-router-dom';
 import '../css/StarRating.css'
 import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
+import AuthService from '../services/AuthService'
 
-
+const Auth = new AuthService()
 
 class NewReview extends Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class NewReview extends Component {
         dining: 0,
         price: 0,
         family_friendly: false,
-        review_text: ''
+        review_text: '',
+        user_id: Auth.getUserId()
       },
       apiUrl: "http://localhost:3000",
       reviews: [],

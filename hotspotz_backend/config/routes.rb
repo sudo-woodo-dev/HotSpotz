@@ -8,4 +8,9 @@ Rails.application.routes.draw do
   resources :users
   post 'review_token' => 'review_token#create'
   resources :reviews
+
+  
+  resources :users do
+    resources :reviews
+  end
 end
