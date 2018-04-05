@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import '../css/Login.css';
+import NavigationPages from './NavigationPages'
+import '../css/NavigationPages.css';
 
 export default class Profile extends Component {
   constructor() {
@@ -30,6 +32,8 @@ export default class Profile extends Component {
   }
   render() {
     return (
+      <div>
+      <NavigationPages />
       <Grid>
         <Row className="show-grid">
           <Col xs={6} md={4}>
@@ -60,6 +64,7 @@ export default class Profile extends Component {
           </Col>
         </Row>
       </Grid>
+      </div>
     );
   }
 }

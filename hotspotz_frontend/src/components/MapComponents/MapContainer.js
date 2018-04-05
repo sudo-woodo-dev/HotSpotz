@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import Navigation from '../../components/Navigation';
+import '../../css/Navigation.css';
 
 const styles = {
   map: {
@@ -49,7 +51,8 @@ export class MapContainer extends React.Component {
         const {directions} = this.state;
         return (
           <div>
-          <div className = "location">
+          <Navigation />
+          <div className = "destination">
           Pick Your Destination Point
           </div>
           <div className = "border">
@@ -139,6 +142,7 @@ export class MapContainer extends React.Component {
           </Map>
           </div>
           </div>
+
     );
   }
 }
