@@ -56,7 +56,7 @@ export class MapContainer extends React.Component {
           Pick Your Destination Point
           </div>
           <div className = "border">
-          <Map
+          <Map className = "mapborder"
             google={this.props.google}
             onClick={this.onMapClicked}
             zoom={12}
