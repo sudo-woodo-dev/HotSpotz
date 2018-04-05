@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import NavigationPages from './NavigationPages'
+import '../css/NavigationPages.css';
 
 export default class Register extends Component {
   constructor(props) {
@@ -44,6 +46,8 @@ export default class Register extends Component {
 
   render() {
     return (
+      <div>
+      <NavigationPages />
       <div className="center">
         <div className="card">
           <h1>Register</h1>
@@ -97,6 +101,7 @@ export default class Register extends Component {
           </form>
         </div>
         {this.state.newUserSuccess && <Redirect to="/login" />}
+      </div>
       </div>
     );
   }
