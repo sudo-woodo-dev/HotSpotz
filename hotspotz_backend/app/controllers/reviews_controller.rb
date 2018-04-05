@@ -1,4 +1,9 @@
 class ReviewsController < ApplicationController
+    def index
+      review = Review.where params[:user_id]
+      render json: review, status: 201
+    end
+
     def show
       review = Review.find params[:id]
       render json: review, status: 201
@@ -16,6 +21,6 @@ class ReviewsController < ApplicationController
     private
     def review_params
       params.require(:review).permit(:area, :area_rating, :dining, :parking, :cleanliness,
-       :safety, :price, :family_friendly, :review_text, :avatar_base, :userId)
+       :safety, :price, :family_friendly, :review_text, :avatar_base, :user_id)
     end
    end

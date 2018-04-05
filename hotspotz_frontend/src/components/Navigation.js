@@ -9,11 +9,6 @@ const Auth = new AuthService()
 
 export default class Navigation extends Component {
 
-  handleLogout(){
-    Auth.logout()
-    this.props.history.replace('/login')
-  }
-
   render() {
     return (
       <Navbar className ="homepage" id = "hp">
