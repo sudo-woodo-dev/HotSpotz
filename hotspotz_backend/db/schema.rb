@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180330224430) do
+ActiveRecord::Schema.define(version: 20180405181102) do
 
   create_table "areas", force: :cascade do |t|
     t.string "neighborhood"
@@ -18,22 +18,8 @@ ActiveRecord::Schema.define(version: 20180330224430) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string "area"
-    t.float "area_rating"
-    t.float "dining"
-    t.float "parking"
-    t.float "cleanliness"
-    t.float "safety"
-    t.float "price"
-    t.boolean "family_friendly"
-    t.string "review_text"
-    t.integer "user_ref"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_ref_id"
-    t.index ["user_ref_id"], name: "index_reviews_on_user_ref_id"
-  end
+# Could not dump table "reviews" because of following StandardError
+#   Unknown type '' for column 'user_id'
 
   create_table "users", force: :cascade do |t|
     t.string "name"

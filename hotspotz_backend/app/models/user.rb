@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :avatar_base
   before_validation :parse_avatar_base
   has_secure_password
+  has_many(:reviews)
 
   validates :name, presence: true, length: { maximum: 25 }
   validates :username, :password,
