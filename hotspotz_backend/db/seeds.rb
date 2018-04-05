@@ -51,9 +51,30 @@
 #   Area.create(attributes)
 # end
 
+
+user_attributes = [
+    {
+        name: "Dean",
+        username:"FDR1510",
+        email:"frankiedean1510@yahoo.com",
+        password:"rosales1510",
+        password_confirmation:"rosales1510"
+    },
+    {
+        name: "Frankie",
+        username:"RapidFap",
+        email:"thetank81g@gmail.com",
+        password:"dean2013",
+        password_confirmation:"dean2013"
+    }
+]
+user_attributes.each do |attributes|
+  User.create(attributes)
+end
+
+
 review_attributes = [
     {
-        id: 2,
         area: "Little Italy",
         area_rating: 4,
         dining: 4,
@@ -62,29 +83,10 @@ review_attributes = [
         safety: 4,
         price: 4,
         family_friendly: true,
-        review_text: "Little Italy reminded of my visit in Rome. Super Rad!"
+        review_text: "Little Italy reminded of my visit in Rome. Super Rad!",
+        user_id: 5
     }
 ]
 review_attributes.each do |attributes|
   Review.create(attributes)
-end
-
-user_attributes = [
-    {
-        id: 1,
-        name: "Dean",
-        username:"FDR1510",
-        email:"frankiedean1510@yahoo.com",
-        password_digest:"rosales1510"
-    },
-    {
-        id: 2,
-        name: "Frankie",
-        username:"RapidFap",
-        email:"thetank81g@gmail.com",
-        password_digest:"dean2013"
-    }
-]
-user_attributes.each do |attributes|
-  User.create(attributes)
 end
