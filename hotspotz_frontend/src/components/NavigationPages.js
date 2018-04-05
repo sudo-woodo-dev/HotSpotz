@@ -9,33 +9,38 @@ const Auth = new AuthService()
 
 export default class Navigation extends Component {
 
+  handleLogout(){
+    Auth.logout()
+    this.props.history.replace('/login')
+  }
+
   render() {
     return (
-      <Navbar className ="homepage" id = "hp">
+      <Navbar className = "pages" id="p">
    <Navbar.Header>
      <Navbar.Brand>
-       <a href="/"><h1 className = "nav">Find the Best San Diego Hot Spot</h1></a>
+       <a href="/"><h1 className = "pages">HotSpotz</h1></a>
      </Navbar.Brand>
    </Navbar.Header>
-   <Nav className = "one">
-     <div className = "choices">
-     <NavItem className = "hello" eventKey={1} href="/register">
-       <button type="button" class="btn btn-primary">Register</button>
+   <Nav className = "two">
+     <div className = "navlist">
+     <NavItem className = "hello" eventKey={1} href="/register"> 
+       Register
      </NavItem>
      <NavItem className = "hello" eventKey={2} href="/login">
-       <button type="button" class="btn btn-info">Login</button>
+      Login
      </NavItem>
      <NavItem className = "hello2" eventKey={5} href="/profile">
-       <button type="button" class="btn btn-primary">Profile</button>
+       Profile
      </NavItem>
      <NavItem className = "hello2" eventKey={5} href="/area">
-       <button type="button" class="btn btn-info">Review</button>
+       Review
      </NavItem>
      <NavItem className = "hello2" eventKey={5} href="/newreview">
-     <button type="button" class="btn btn-primary">Submit New Review</button>
+     Submit New Review
      </NavItem>
-     <NavItem className = "hello2" eventKey={5} href="/login">
-      <button type="button" class="btn btn-primary" onClick={Auth.logout}>Logout</button>
+     <NavItem className = "hello2" eventKey={5} onClick={Auth.logout} href="/login">
+      Logout
     </NavItem>
      </div>
    </Nav>

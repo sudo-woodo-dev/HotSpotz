@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import "../css/Login.css";
 import AuthService from '../services/AuthService';
 import withAuth from './withAuth'
-import { Link } from 'react-router-dom' 
-
+import { Link } from 'react-router-dom'
+import NavigationPages from './NavigationPages'
+import '../css/NavigationPages.css';
 
 
 class Login extends Component {
@@ -38,6 +39,8 @@ class Login extends Component {
 
   render() {
     return (
+      <div>
+      <NavigationPages />
       <div className="center">
         <div className="card">
           <h1>Login</h1>
@@ -72,6 +75,7 @@ class Login extends Component {
               className="form-submit-link">Not Registered? Sign up here</Link>
           </form>
         </div>
+      </div>
       </div>
     );
   }

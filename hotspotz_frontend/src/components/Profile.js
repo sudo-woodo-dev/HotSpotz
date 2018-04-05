@@ -3,6 +3,8 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import '../css/Login.css';
 import AuthService from '../services/AuthService'
 import StarRatingComponent from 'react-star-rating-component';
+import NavigationPages from './NavigationPages'
+import '../css/NavigationPages.css';
 
 const Auth = new AuthService()
 const loggedUser = getLoggedUser()
@@ -11,6 +13,7 @@ function getLoggedUser(){
     return Auth.getUserId()
   }
 }
+
 
 export default class Profile extends Component {
   constructor() {
@@ -46,6 +49,8 @@ export default class Profile extends Component {
 
   render() {
     return (
+      <div>
+      <NavigationPages />
       <Grid>
         <Row className="show-grid">
           <Col xs={6} md={4}>
@@ -85,6 +90,7 @@ export default class Profile extends Component {
         </Col>
         </Row>
       </Grid>
+      </div>
     );
   }
 }

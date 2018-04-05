@@ -6,6 +6,8 @@ import {
   Panel,
   PageHeader
 } from 'react-bootstrap';
+import NavigationPages from './NavigationPages'
+import '../css/NavigationPages.css';
 
 export default class Area extends Component {
   constructor() {
@@ -43,6 +45,8 @@ export default class Area extends Component {
   render() {
     return (
       <div>
+      <NavigationPages />
+      <div>
         <Grid>
           <Row>
             <PageHeader id="area-name">
@@ -73,6 +77,7 @@ export default class Area extends Component {
         <Grid>
           {this.state.comments.map((comment, index) => {
             return (
+
               <Panel id="comment-row" key={index}>
                 <Panel.Heading>
                   <Panel.Title>
@@ -93,6 +98,7 @@ export default class Area extends Component {
             )
           })}
         </Grid>
+      </div>
       </div>
     )
   }

@@ -4,6 +4,8 @@ import '../css/StarRating.css'
 import ReactDOM from 'react-dom';
 import StarRatingComponent from 'react-star-rating-component';
 import AuthService from '../services/AuthService'
+import NavigationPages from './NavigationPages'
+import '../css/NavigationPages.css';
 
 const Auth = new AuthService()
 
@@ -131,6 +133,8 @@ class NewReview extends Component {
   render() {
 
     return (
+      <div>
+      <NavigationPages />
       <div className="center">
         <div className="card">
           <h1 className = "title">Submit Your Review</h1>
@@ -222,6 +226,7 @@ class NewReview extends Component {
         </div>
 
         { this.state.newReviewSuccess && <Redirect to={`${this.state.form.area}`} /> }
+      </div>
       </div>
     );
   }
