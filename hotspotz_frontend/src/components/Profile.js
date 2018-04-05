@@ -94,15 +94,3 @@ export default class Profile extends Component {
     );
   }
 }
-// {this.state.reviews.map((review, index) =>{
-//   return (
-//     <Row id="review-row" key={index}>
-//       <Col>
-//         <img id="review-photo" src={review.photo} />
-//       </Col>
-//       <Col>
-//         <p id="review-text">{review.text}</p>
-//       </Col>
-//     </Row>
-//   )
-// })}
