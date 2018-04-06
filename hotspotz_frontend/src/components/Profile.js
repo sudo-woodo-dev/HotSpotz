@@ -8,6 +8,7 @@ import '../css/NavigationPages.css';
 
 const Auth = new AuthService()
 const loggedUser = getLoggedUser()
+
 function getLoggedUser(){
   if(Auth.loggedIn()){
     return Auth.getUserId()
@@ -37,7 +38,7 @@ export default class Profile extends Component {
   }
 
   componentDidMount(){
-    fetch(`${this.state.apiUrl}/users/${loggedUser}/reviews`).then((rawResponse)=>{
+    fetch(`${this.state.apiUrl}/reviews_by_id/${loggedUser}`).then((rawResponse)=>{
       // rawResponse.json() returns a promise that we pass along
       return rawResponse.json()
     }).then((parsedResponse) => {

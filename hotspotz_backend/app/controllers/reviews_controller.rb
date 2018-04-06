@@ -1,8 +1,8 @@
 class ReviewsController < ApplicationController
-    def index
-      review = Review.where params[:user_id]
-      render json: review, status: 201
-    end
+    # def index
+    #   review = Review.where params[:user_id]
+    #   render json: review, status: 201
+    # end
 
     def show
       review = Review.find params[:id]
@@ -16,6 +16,11 @@ class ReviewsController < ApplicationController
       else
         render json: { errors: review.errors }, status: 422
       end
+    end
+
+    def reviews_by_id
+      review = Review.where("user_id = #{params[:user_id]}")
+      render json: review, status: 201
     end
 
     private
