@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   post 'review_token' => 'review_token#create'
   resources :reviews
 
-  
+  get 'reviews_by_id/:user_id' => 'reviews#reviews_by_id'
+
   resources :users do
     resources :reviews
   end
