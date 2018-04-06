@@ -6,6 +6,7 @@ import StarRatingComponent from 'react-star-rating-component';
 import AuthService from '../services/AuthService'
 import NavigationPages from './NavigationPages'
 import '../css/NavigationPages.css';
+import withAuth from './withAuth'
 
 const Auth = new AuthService()
 
@@ -28,9 +29,24 @@ class NewReview extends Component {
       apiUrl: "http://localhost:3000",
       reviews: [],
       newReviewSuccess: false,
-      errors: null
+      errors: null,
+      user: null
     }
   }
+
+  componentWillMount(){
+    const userId = Auth.getUserId()
+    Auth.fetch(`http://localhost:3000/users/${userId}`).then( res => {
+      this.setState({ user: res })
+    })
+  }
+
+  handleLogout() {
+    Auth.logout()
+    this.props.history.replace('/login');
+
+  }
+
 
   handleChange(event) {
       const formState = Object.assign({}, this.state.form)
@@ -232,4 +248,4 @@ class NewReview extends Component {
   }
 }
 
-export default NewReview
+export default withAuth(NewReview)

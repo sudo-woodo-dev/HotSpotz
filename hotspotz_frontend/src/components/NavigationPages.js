@@ -24,7 +24,7 @@ export default class Navigation extends Component {
    </Navbar.Header>
    <Nav className = "two">
      <div className = "navlist">
-     <NavItem className = "hello" eventKey={1} href="/register"> 
+     <NavItem className = "hello" eventKey={1} href="/register">
        Register
      </NavItem>
      <NavItem className = "hello" eventKey={2} href="/login">
