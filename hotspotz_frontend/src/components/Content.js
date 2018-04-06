@@ -13,6 +13,7 @@ import LomaPortal from './areas/LomaPortal'
 import NorthPark from './areas/NorthPark'
 import OceanBeach from './areas/OceanBeach'
 import ShelterIslandArea from './areas/ShelterIslandArea'
+import Hillcrest from './areas/Hillcrest'
 import Register from './Register'
 
 const Content = () => (
@@ -31,6 +32,7 @@ const Content = () => (
     <Route exact path="/northpark" component={NorthPark} />
     <Route exact path="/oceanbeach" component={OceanBeach} />
     <Route exact path="/shelterisland" component={ShelterIslandArea} />
+    <Route exact path="/hillcrest" component={Hillcrest} />
   </Switch>
 );
 

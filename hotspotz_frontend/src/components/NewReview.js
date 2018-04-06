@@ -149,6 +149,7 @@ class NewReview extends Component {
                 <option value="shelterisland">Shelter Island Area</option>
                 <option value="oceanbeach">Ocean Beach</option>
                 <option value="lomaportal">Loma Portal</option>
+                <option value="hillcrest">Hillcrest</option>
               </select>
             <div>
         <h3>Rate the Area: {this.state.area_rating}/5</h3>
