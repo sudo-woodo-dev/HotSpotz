@@ -18,14 +18,20 @@ class ReviewsController < ApplicationController
       end
     end
 
-    def reviews_by_id
+    def reviews_by_user_id
       review = Review.where("user_id = #{params[:user_id]}")
       render json: review, status: 201
     end
 
+    def reviews_by_area_id
+      review = Review.where("area_id = #{params[:area_id]}")
+      render json: review, status: 201
+    end
+
+
     private
     def review_params
       params.require(:review).permit(:area, :area_rating, :dining, :parking, :cleanliness,
-       :safety, :price, :family_friendly, :review_text, :avatar_base, :user_id)
+       :safety, :price, :family_friendly, :review_text, :avatar_base, :user_id, :area_id)
     end
    end

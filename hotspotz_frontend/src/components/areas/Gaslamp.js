@@ -6,6 +6,8 @@ import {
   Panel,
   PageHeader
 } from 'react-bootstrap';
+import '../../css/Gaslamp.css'
+import NavigationPages from '../../components/NavigationPages'
 
 export default class Gaslamp extends Component {
   constructor() {
@@ -21,21 +23,6 @@ export default class Gaslamp extends Component {
         familyFriendliness: true
       },
       comments: [
-        {
-          author: 'Jane Doe',
-          photo: 'http://via.placeholder.com/200x200',
-          text: 'Disgusting, will never return'
-        },
-        {
-          author: 'John Doe',
-          photo: 'http://via.placeholder.com/200x200',
-          text: 'Smells like apple pie'
-        },
-        {
-          author:'Doe Doe',
-          photo: 'http://via.placeholder.com/200x200',
-          text: 'Too many birds flying around'
-        }
       ]
     };
   }
@@ -43,6 +30,9 @@ export default class Gaslamp extends Component {
   render() {
     return (
       <div>
+      <NavigationPages />
+      <div className="center_gaslamp">
+        <div className="card">
         <Grid>
           <Row>
             <PageHeader id="area-name">
@@ -93,6 +83,8 @@ export default class Gaslamp extends Component {
             )
           })}
         </Grid>
+      </div>
+      </div>
       </div>
     )
   }
