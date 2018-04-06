@@ -18,8 +18,23 @@ ActiveRecord::Schema.define(version: 20180406183021) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "reviews" because of following StandardError
-#   Unknown type '' for column 'user_id'
+  create_table "reviews", force: :cascade do |t|
+    t.string "area"
+    t.float "area_rating"
+    t.float "dining"
+    t.float "parking"
+    t.float "cleanliness"
+    t.float "safety"
+    t.float "price"
+    t.boolean "family_friendly"
+    t.string "review_text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "area_id"
+    t.index ["area_id"], name: "index_reviews_on_area_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"

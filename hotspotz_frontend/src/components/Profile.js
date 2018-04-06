@@ -23,7 +23,18 @@ export default class Profile extends Component {
     this.state = {
       apiUrl: "http://localhost:3000",
       user: {},
-      reviews: []
+      reviews: [],
+      areas: [
+        'East Village',
+        'Little Italy',
+        'North Park',
+        'Hillcrest',
+        'Gaslamp',
+        'Coronado',
+        'Shelter Island',
+        'Ocean Beach',
+        'Loma Portal'
+      ]
     };
   }
   componentWillMount(){
@@ -38,7 +49,7 @@ export default class Profile extends Component {
   }
 
   componentDidMount(){
-    fetch(`${this.state.apiUrl}/reviews_by_id/${loggedUser}`).then((rawResponse)=>{
+    fetch(`${this.state.apiUrl}/reviews_by_user_id/${loggedUser}`).then((rawResponse)=>{
       // rawResponse.json() returns a promise that we pass along
       return rawResponse.json()
     }).then((parsedResponse) => {
@@ -71,7 +82,7 @@ export default class Profile extends Component {
             return(
           <Col xs={12} md={8}>
             <Col>
-              <h2>{review.area} {review.area_rating}</h2>
+              <h2>{this.state.areas[review.area_id - 1]} {review.area_rating}</h2>
               <div>Dining: <StarRatingComponent starCount={5} value={review.dining}/> </div>
 
               <div>Parking: <StarRatingComponent starCount={5} value={review.parking}/></div>

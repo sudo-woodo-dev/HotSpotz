@@ -9,13 +9,15 @@ import '../css/NavigationPages.css';
 
 const Auth = new AuthService()
 
+const apiUrl = "http://localhost:3000"
+
 class NewReview extends Component {
   constructor(props) {
     super(props)
     this.state = {
       form: {
-        area: 'eastvillage',
         area_rating: 0,
+        area_id: 0,
         parking: 0,
         cleanliness: 0,
         safety: 0,
@@ -25,7 +27,6 @@ class NewReview extends Component {
         review_text: '',
         user_id: Auth.getUserId()
       },
-      apiUrl: "http://localhost:3000",
       reviews: [],
       newReviewSuccess: false,
       errors: null
@@ -71,31 +72,32 @@ class NewReview extends Component {
       }
     }
 
-    handleSubmit(event) {
-      event.preventDefault();
+    handleSubmit(e) {
+      e.preventDefault();
 
-      fetch(`${this.state.apiUrl}/reviews`,
-        {
+      fetch(`${apiUrl}/reviews`, {
           body: JSON.stringify({review: this.state.form}),
           headers: {
             'Content-Type': 'application/json'
           },
           method: "POST"
-        }
-      )
-      .then((rawResponse) => {
-        return Promise.all([rawResponse.status, rawResponse.json()])
+        })
+      .then((res) => {
+        return Promise.all([res.status, res.json()])
       })
-      .then((parsedResponse) => {
-        if (parsedResponse[0] === 422) {
-          this.setState({errors: parsedResponse[1]})
+      .then((res) => {
+        if (res[0] === 422) {
+          this.setState({errors: res[1]})
         } else {
-          const reviews = Object.assign([], this.state.reviews)
-          reviews.push(parsedResponse[1])
+          // const reviews = Object.assign([], this.state.reviews)
+          const { reviews } = this.state
+
+          reviews.push(res[1])
+
           this.setState({
-            reviews: reviews,
             errors: null,
-            newReviewSuccess: true
+            newReviewSuccess: true,
+            reviews,
           });
         }
       });
@@ -140,16 +142,17 @@ class NewReview extends Component {
           <h1 className = "title">Submit Your Review</h1>
           <form onSubmit={this.handleSubmit.bind(this)}>
             <div> CHOOSE YOUR AREA </div>
-              <select name='area' onChange={this.handleChange.bind(this)}>
-                <option value="eastvillage">East Village</option>
-                <option value="littleitaly">Little Italy</option>
-                <option value="northpark">North Park</option>
-                <option value="gaslamp">Gaslamp</option>
-                <option value="coronado">Coronado</option>
-                <option value="shelterisland">Shelter Island Area</option>
-                <option value="oceanbeach">Ocean Beach</option>
-                <option value="lomaportal">Loma Portal</option>
-                <option value="hillcrest">Hillcrest</option>
+              <select name='area_id' onChange={this.handleChange.bind(this)}>
+                <option>Select Area</option>
+                <option value={1}>East Village</option>
+                <option value={2}>Little Italy</option>
+                <option value={3}>North Park</option>
+                <option value={4}>Hillcrest</option>
+                <option value={5}>Gaslamp</option>
+                <option value={6}>Coronado</option>
+                <option value={7}>Shelter Island Area</option>
+                <option value={8}>Ocean Beach</option>
+                <option value={9}>Loma Portal</option>
               </select>
             <div>
         <h3>Rate the Area: {this.state.area_rating}/5</h3>
@@ -218,15 +221,12 @@ class NewReview extends Component {
               type="file"
               onChange={this.fileChangeHandler.bind(this)}
             />
-            <input
+            <button
               className="form-submit"
-              value="SUBMIT"
-              type="submit"
-            />
+              onClick={this.handleSubmit.bind(this)}
+            >Submit Your Review</button>
           </form>
         </div>
-
-        { this.state.newReviewSuccess && <Redirect to={`${this.state.form.area}`} /> }
       </div>
       </div>
     );

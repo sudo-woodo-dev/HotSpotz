@@ -4,6 +4,7 @@ import Navigation from '../../components/Navigation';
 import '../../css/Navigation.css';
 import { Link, Router } from 'react-router-dom'
 
+
 const styles = {
   map: {
     maxWidth: '1100px',
@@ -55,7 +56,7 @@ export class MapContainer extends React.Component {
     render() {
         const {directions} = this.state;
         return (
-          <div>
+        <div>
           <Navigation />
           <div className = "destination">
             Pick Your Destination Point
