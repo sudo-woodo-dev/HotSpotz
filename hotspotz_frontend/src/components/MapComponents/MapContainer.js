@@ -3,6 +3,7 @@ import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Navigation from '../../components/Navigation';
 import '../../css/Navigation.css';
 
+
 const styles = {
   map: {
     maxWidth: '1100px',
@@ -50,7 +51,7 @@ export class MapContainer extends React.Component {
     render() {
         const {directions} = this.state;
         return (
-          <div>
+        <div>
           <Navigation />
           <div className = "destination">
           Pick Your Destination Point
