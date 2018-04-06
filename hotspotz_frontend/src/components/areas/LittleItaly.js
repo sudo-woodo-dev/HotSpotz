@@ -6,6 +6,8 @@ import {
   Panel,
   PageHeader
 } from 'react-bootstrap';
+import '../../css/LittleItaly.css'
+import NavigationPages from '../../components/NavigationPages'
 
 export default class LittleItaly extends Component {
   constructor() {
@@ -21,21 +23,7 @@ export default class LittleItaly extends Component {
         familyFriendliness: true
       },
       comments: [
-        {
-          author: 'Jane Doe',
-          photo: 'http://via.placeholder.com/200x200',
-          text: 'Disgusting, will never return'
-        },
-        {
-          author: 'John Doe',
-          photo: 'http://via.placeholder.com/200x200',
-          text: 'Smells like apple pie'
-        },
-        {
-          author:'Doe Doe',
-          photo: 'http://via.placeholder.com/200x200',
-          text: 'Too many birds flying around'
-        }
+
       ]
     };
   }
@@ -43,6 +31,9 @@ export default class LittleItaly extends Component {
   render() {
     return (
       <div>
+      <NavigationPages />
+      <div className="center_littleitaly">
+        <div className="card">
         <Grid>
           <Row>
             <PageHeader id="area-name">
@@ -93,6 +84,8 @@ export default class LittleItaly extends Component {
             )
           })}
         </Grid>
+      </div>
+      </div>
       </div>
     )
   }

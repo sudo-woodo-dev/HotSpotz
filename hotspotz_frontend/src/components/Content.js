@@ -30,7 +30,7 @@ const Content = () => (
     <Route exact path="/lomaportal" component={LomaPortal} />
     <Route exact path="/northpark" component={NorthPark} />
     <Route exact path="/oceanbeach" component={OceanBeach} />
-    <Route exact path="/shelterisland" component={ShelterIslandArea} />
+    <Route exact path="/shelterislandarea" component={ShelterIslandArea} />
   </Switch>
 );
 
