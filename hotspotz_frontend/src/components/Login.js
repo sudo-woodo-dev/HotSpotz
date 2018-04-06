@@ -31,7 +31,7 @@ class Login extends Component {
     e.preventDefault();
     this.Auth.login(this.state.username, this.state.password)
     .then(res => {
-      this.props.history.replace('/newreview')
+      this.props.history.replace('/')
       alert('You are logged in!');
     })
     .catch(err =>{ alert(err) })
