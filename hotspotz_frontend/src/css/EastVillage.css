@@ -15,8 +15,9 @@
   background-color: #fff;
   border-radius: 15px;
   padding: 0.8rem;
-  border-color: lightblue;
+  border-color: #337ab7;
   border-width: 8px;
+  width:auto;
   /* add opacity here?  */
 }
 

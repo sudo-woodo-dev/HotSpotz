@@ -1,5 +1,5 @@
 .center {
-  background-image: url("https://wallpaperlayer.com/img/2015/9/san-diego-sunset-wallpaper-hd-7172-7454-hd-wallpapers.jpg");
+  background-image: url("https://www.marinainnsandiego.com/assets/themes/marinainnsandiego/img/San-diego-skyline-near-marina-Inn-&-Suites.jpg");
   background-color:white;
   position: absolute;
   height: 100%;
@@ -15,9 +15,10 @@
   background-color: #fff;
   border-radius: 15px;
   padding: 0.8rem;
-  border-color: lightblue;
+  border-color: #337ab7;
   border-width: 8px;
-  /* add opacity here?  */
+  width: auto;
+
 }
 
 .card > form {
@@ -37,7 +38,7 @@
   padding: 5px;
   margin-bottom: 2rem;
   height: 30px;
-  width: 16rem;
+
   border: 1px solid grey;
 }
 

@@ -139,7 +139,7 @@ class NewReview extends Component {
         <div className="card">
           <h1 className = "title">Submit Your Review</h1>
           <form onSubmit={this.handleSubmit.bind(this)}>
-            <div> CHOOSE YOUR AREA </div>
+            <h3> Choose Your Area: </h3>
               <select name='area' onChange={this.handleChange.bind(this)}>
                 <option value="eastvillage">East Village</option>
                 <option value="littleitaly">Little Italy</option>
