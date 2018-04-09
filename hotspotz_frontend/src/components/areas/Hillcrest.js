@@ -4,18 +4,15 @@ import {
   Row,
   Col,
   Panel,
-  PageHeader,
-  Well
+  PageHeader
 } from 'react-bootstrap';
-import '../../css/Coronado.css'
-import NavigationPages from '../../components/NavigationPages'
 
-export default class Coronado extends Component {
+export default class Hillcrest extends Component {
   constructor() {
     super();
     this.state = {
       area: {
-        name: 'Coronado',
+        name: 'Hillcrest',
         overallScore: '2.75',
         parkingScore: '3',
         cleanlinessScore: '2',
@@ -24,7 +21,21 @@ export default class Coronado extends Component {
         familyFriendliness: true
       },
       comments: [
-
+        {
+          author: 'Jane Doe',
+          photo: 'http://via.placeholder.com/200x200',
+          text: 'Disgusting, will never return'
+        },
+        {
+          author: 'John Doe',
+          photo: 'http://via.placeholder.com/200x200',
+          text: 'Smells like apple pie'
+        },
+        {
+          author:'Doe Doe',
+          photo: 'http://via.placeholder.com/200x200',
+          text: 'Too many birds flying around'
+        }
       ]
     };
   }
@@ -32,14 +43,12 @@ export default class Coronado extends Component {
   render() {
     return (
       <div>
-      <NavigationPages />
-      <div className="center_coronado">
-      <Well className = "opa" id="area-name">
-      {this.state.area.name}
-      </Well>
-      <br />
-        <div className="card_coronado">
         <Grid>
+          <Row>
+            <PageHeader id="area-name">
+              {this.state.area.name}
+            </PageHeader>
+          </Row>
           <Row id="overall-score">
             Overall: {this.state.area.overallScore}
           </Row>
@@ -84,8 +93,6 @@ export default class Coronado extends Component {
             )
           })}
         </Grid>
-      </div>
-      </div>
       </div>
     )
   }

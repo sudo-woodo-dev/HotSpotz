@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Col } from 'react-bootstrap';
 import '../css/Navigation.css';
 import withAuth from './withAuth'
 import AuthService from '../services/AuthService'
@@ -45,6 +45,7 @@ export default class Navigation extends Component {
      </div>
    </Nav>
  </Navbar>
+
 )
 }
 };
