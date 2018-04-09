@@ -41,6 +41,9 @@ class Login extends Component {
     return (
       <div>
       <NavigationPages />
+      <div class="alert alert-info" role="alert">
+        Please register before logging in!
+      </div>
       <div className="center">
         <div className="card">
           <h1>Login</h1>

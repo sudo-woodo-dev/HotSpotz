@@ -4,7 +4,8 @@ import {
   Row,
   Col,
   Panel,
-  PageHeader
+  PageHeader,
+  Well
 } from 'react-bootstrap';
 import '../../css/LittleItaly.css'
 import NavigationPages from '../../components/NavigationPages'
@@ -33,13 +34,11 @@ export default class LittleItaly extends Component {
       <div>
       <NavigationPages />
       <div className="center_littleitaly">
-        <div className="card">
+      <Well className = "opa" id="area-name">
+      {this.state.area.name}
+      </Well>
+        <div className="card_littleitaly">
         <Grid>
-          <Row>
-            <PageHeader id="area-name">
-              {this.state.area.name}
-            </PageHeader>
-          </Row>
           <Row id="overall-score">
             Overall: {this.state.area.overallScore}
           </Row>

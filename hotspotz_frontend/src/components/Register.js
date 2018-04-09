@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import NavigationPages from './NavigationPages'
 import '../css/NavigationPages.css';
 
+
 export default class Register extends Component {
   constructor(props) {
     super(props);
