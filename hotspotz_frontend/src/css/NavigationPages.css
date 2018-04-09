@@ -12,18 +12,18 @@
 }
 
 a {
-  color:white;
+  color:#2aabd2;
 }
 
 h1.pages {
   margin-bottom: 10px;
-  color: white;
+  color: #2aabd2;
   margin-right: 100px;
   margin-bottom: 10px;
   font-size: 40px;
   margin-left: -950px;
   padding-bottom:65px;
-  margin-top:50px;
+
 }
 
 .brand {
@@ -36,9 +36,17 @@ h1.pages {
   padding-bottom:10px;
   text-indent: 20em;
   padding-top: 80px;
-
-
 }
+
+.card_register {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 0.8rem;
+    border-color: #337ab7;
+    border-width: 8px;
+    width:300px;
+  }
+
 
 .homepage {
   margin: 0;
@@ -57,10 +65,10 @@ h1.pages {
 .navbar-nav {
 
   margin-right:-370px;
-  
+
   color:white;
   font-size:15px;
-  margin-top:100px;
+  margin-top:120px;
 }
 
 .location {

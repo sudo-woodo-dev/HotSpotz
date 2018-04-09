@@ -1,5 +1,5 @@
-.center_lomaportal {
-  background-image: url("https://marclyman.com/wp-content/uploads/2014/11/point-loma-san-diego-bay-skyline.jpg");
+.center_hillcrest {
+  background-image: url("http://www.magnusresults.com/wp-content/gallery/hillcrestuniversity-heights/hillcrest-at-night.jpg");
   background-color:white;
   position: absolute;
   height: 100%;
@@ -11,13 +11,13 @@
   background-size:cover;
 }
 
-.card_lomaportal {
+.card_hillcrest {
   background-color: #fff;
   border-radius: 15px;
   padding: 0.8rem;
   border-color: #337ab7;
   border-width: 8px;
-  width: 400px;
+  width:400px;
 }
 
 .card > form {

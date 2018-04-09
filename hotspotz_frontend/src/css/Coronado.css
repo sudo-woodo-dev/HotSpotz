@@ -11,13 +11,13 @@
   background-size:cover;
 }
 
-.card {
+.card_coronado {
   background-color: #fff;
   border-radius: 15px;
   padding: 0.8rem;
-  border-color: lightblue;
+  border-color: #337ab7;
   border-width: 8px;
-  /* add opacity here?  */
+  width:400px;
 }
 
 .card > form {
@@ -31,4 +31,14 @@
   margin-bottom: 10px;
   color: grey;
   font-weight:bold;
+}
+
+.opa {
+  opacity: .7;
+  font-size: 85px;
+}
+
+.well {
+  margin-right:200px;
+  margin-bottom:200px;
 }
