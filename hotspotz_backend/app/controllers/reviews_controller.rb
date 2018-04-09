@@ -1,8 +1,13 @@
 class ReviewsController < ApplicationController
-    # def index
-    #   review = Review.where params[:user_id]
-    #   render json: review, status: 201
-    # end
+
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
+    def index
+      review = Review.where params[:user_id]
+      render json: review, status: 201
+    end
+
 
     def show
       review = Review.find params[:id]

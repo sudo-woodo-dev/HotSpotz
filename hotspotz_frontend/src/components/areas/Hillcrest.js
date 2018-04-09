@@ -4,13 +4,10 @@ import {
   Row,
   Col,
   Panel,
-  PageHeader,
-  Well
+  PageHeader
 } from 'react-bootstrap';
-import '../../css/Hillcrest.css'
-import NavigationPages from '../../components/NavigationPages'
 
-export default class Coronado extends Component {
+export default class Hillcrest extends Component {
   constructor() {
     super();
     this.state = {
@@ -24,7 +21,21 @@ export default class Coronado extends Component {
         familyFriendliness: true
       },
       comments: [
-
+        {
+          author: 'Jane Doe',
+          photo: 'http://via.placeholder.com/200x200',
+          text: 'Disgusting, will never return'
+        },
+        {
+          author: 'John Doe',
+          photo: 'http://via.placeholder.com/200x200',
+          text: 'Smells like apple pie'
+        },
+        {
+          author:'Doe Doe',
+          photo: 'http://via.placeholder.com/200x200',
+          text: 'Too many birds flying around'
+        }
       ]
     };
   }
@@ -32,14 +43,12 @@ export default class Coronado extends Component {
   render() {
     return (
       <div>
-      <NavigationPages />
-      <div className="center_hillcrest">
-      <Well className = "opa" id="area-name">
-      {this.state.area.name}
-      </Well>
-      <br />
-        <div className="card_hillcrest">
         <Grid>
+          <Row>
+            <PageHeader id="area-name">
+              {this.state.area.name}
+            </PageHeader>
+          </Row>
           <Row id="overall-score">
             Overall: {this.state.area.overallScore}
           </Row>
@@ -84,8 +93,6 @@ export default class Coronado extends Component {
             )
           })}
         </Grid>
-      </div>
-      </div>
       </div>
     )
   }
