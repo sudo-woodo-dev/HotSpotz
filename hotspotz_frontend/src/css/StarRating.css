@@ -55,10 +55,14 @@
     left:2px;
 }
 
-button, select {
+button {
     text-transform: none;
     width: 50%;
     margin-left: 210px;
+}
+
+select {
+  width:50%
 }
 
 textarea {

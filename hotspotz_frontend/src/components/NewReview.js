@@ -157,6 +157,7 @@ class NewReview extends Component {
         <div className="card">
           <h1 className = "title">Submit Your Review</h1>
           <form onSubmit={this.handleSubmit.bind(this)}>
+
             <div> CHOOSE YOUR AREA </div>
               <select name='area_id' onChange={this.handleChange.bind(this)}>
                 <option>Select Area</option>
@@ -169,6 +170,7 @@ class NewReview extends Component {
                 <option value={7}>Shelter Island Area</option>
                 <option value={8}>Ocean Beach</option>
                 <option value={9}>Loma Portal</option>
+
               </select>
             <div>
         <h3>Rate the Area: {this.state.area_rating}/5</h3>
