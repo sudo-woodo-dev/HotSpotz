@@ -4,7 +4,8 @@ import {
   Row,
   Col,
   Panel,
-  PageHeader
+  PageHeader,
+  Well
 } from 'react-bootstrap';
 import '../../css/LomaPortal.css'
 import NavigationPages from '../../components/NavigationPages'
@@ -33,13 +34,11 @@ export default class LomaPortal extends Component {
       <div>
       <NavigationPages />
       <div className="center_lomaportal">
-        <div className="card">
+      <Well className = "opa" id="area-name">
+      {this.state.area.name}
+      </Well>
+        <div className="card_lomaportal">
         <Grid>
-          <Row>
-            <PageHeader id="area-name">
-              {this.state.area.name}
-            </PageHeader>
-          </Row>
           <Row id="overall-score">
             Overall: {this.state.area.overallScore}
           </Row>

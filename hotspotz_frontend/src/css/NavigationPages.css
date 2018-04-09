@@ -36,9 +36,17 @@ h1.pages {
   padding-bottom:10px;
   text-indent: 20em;
   padding-top: 80px;
-
-
 }
+
+.card_register {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 0.8rem;
+    border-color: #337ab7;
+    border-width: 8px;
+    width:300px;
+  }
+
 
 .homepage {
   margin: 0;
